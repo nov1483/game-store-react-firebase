@@ -1,0 +1,25 @@
+[debug] [2022-04-29T00:16:44.916Z] ----------------------------------------------------------------------
+[debug] [2022-04-29T00:16:44.918Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\novic\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-04-29T00:16:44.919Z] CLI Version:   10.7.1
+[debug] [2022-04-29T00:16:44.919Z] Platform:      win32
+[debug] [2022-04-29T00:16:44.919Z] Node Version:  v16.14.2
+[debug] [2022-04-29T00:16:44.920Z] Time:          Fri Apr 29 2022 02:16:44 GMT+0200 (Центральная Европа, летнее время)
+[debug] [2022-04-29T00:16:44.920Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-29T00:16:44.930Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-29T00:16:44.931Z] > authorizing via signed-in user (novickii8314@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\homeworkJS\game-store\game-shop
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
