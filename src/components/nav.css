@@ -1,22 +1,28 @@
 header{
     display: flex;
     align-items: center;
-    background-color: #0455b3b6;
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 50px;
+}
+
+header img {
+    padding: 10px;
 }
 header a {
     margin-right: 50px;
     margin-left: 5px;
 }
 nav a {
-    margin-left: 40px;
+    margin-left: 20px;
     padding: 5px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     position: relative;
     font-size: 16px;
     line-height: 16px;
+}
+nav a:hover{
+    color: rgb(124, 51, 146);
 }
 
 nav a::after{
@@ -27,7 +33,7 @@ nav a::after{
 	left: 0;
 	width: 0;
 	height: 0;
-	background: rgb(65, 59, 59);
+	background-color: rgb(223, 215, 215);
 	transition: all 1s ease;
 }
 nav a:hover::after{
@@ -35,6 +41,10 @@ nav a:hover::after{
     height: 2px;
     bottom: 0;
     left: 0;
+}
+
+nav .cart {
+    font-size: 30px;
 }
 
 header input {

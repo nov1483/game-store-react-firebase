@@ -2,6 +2,8 @@ import React from "react";
 import {Link, Outlet} from "react-router-dom";
 import logo from "../img/logo.png"
 import './nav.css'
+import { BsCart4 } from "react-icons/bs";
+
 
 function Nav(){
     return (
@@ -13,6 +15,7 @@ function Nav(){
                     <Link to='game-store'>Game store</Link>
                     <Link to='about'>About</Link>
                     <Link to='Contacts'>Contacts</Link>
+                    <Link to='cart' className="cart"><BsCart4/></Link>
                 </nav>
                 <input type='text' placeholder='Search'></input>
             </header>
