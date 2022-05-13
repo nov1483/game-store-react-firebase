@@ -1,0 +1,122 @@
+.about_block {
+    padding: 50px 0;
+    text-align: center;
+    background-image: url(../img/background_adding.png);
+}
+.about_info {
+    background-color: #000;
+    position: relative;
+}
+.about_info .edge{
+    position: absolute;
+    top: -11px;
+    height: 25px;
+    background-image: url(../img/tear-top.png);
+}
+
+.about_container_info {
+    display: flex;
+}
+
+.about_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.about_content h2{
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.about_contacts_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.about_contacts_content .item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.about_contacts_content .item .image {
+    font-size: 30px;
+    display: flex;
+    align-items: flex-start;
+    margin-right: 15px;
+}
+
+.about_contacts_content .copy {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.copy span {
+    margin-bottom: 15px;
+}
+
+.copy a {
+    color: rgba(96, 206, 240, 0.747);
+    text-decoration: none;
+}
+
+.copy a:hover {
+    color: rgb(134, 96, 240);
+}
+
+.copy .item_contatcs_links {
+    display: flex;
+}
+
+.copy .item_contatcs_links a {
+    margin-right: 10px;
+    background-color: rgba(96, 206, 240, 0.747);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.copy .item_contatcs_links a:hover {
+    background-color: rgb(134, 96, 240);
+}
+
+.about_form {
+    text-align: center;
+    padding: 80px 0;
+    background-image: url(../img/black-texture-bg.jpg);
+}
+
+.about_form h2 {
+    margin-bottom: 50px;
+}
+
+.about_form input {
+    border:0;
+    padding: 10px 0;
+    width: 374px;
+}
+
+.about_form input:hover,
+.about_form input:focus{
+    outline: 0;
+    border: 0;
+}
+
+.about_form button {
+    border: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: rgb(134, 96, 240);
+    color: rgba(96, 206, 240, 1);
+    transition: ease-in-out 0.5s;
+}
+
+.about_form button:hover {
+    background-color: rgba(96, 206, 240, 1);
+    color: rgb(134, 96, 240);
+}

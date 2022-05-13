@@ -1,0 +1,142 @@
+.footer {
+    padding: 60px;
+    background-image: url(../img/black-texture-bg.jpg);
+}
+
+.footer_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    margin-bottom: 50px;
+}
+
+.footer_container a{
+    font-size: 16px;
+    line-height: 160%;
+    color: #FFFFFF;
+    opacity: 0.7;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.footer_nav .nav_container {
+    display: flex;
+    flex-direction: column;
+}
+.about_links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_contacts .ico {
+    margin-right: 15px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgb(32, 30, 34);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.ico_mail{
+    background-image: url(../img/mail_footer.svg);
+}
+
+.ico_mobile{
+    background-image: url(../img/mobile_footer.svg);
+}
+
+.ico_phone{
+    background-image: url(../img/phone_footer.svg);
+}
+
+.footer_contacts .ico_contacts {
+    display: flex;
+}
+
+.social_links {
+    display: flex;
+}
+
+.social_links .ico_link {
+    margin-right: 15px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #01020C;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: ease-in-out 0.5s;
+}
+
+.social_links .ico_fb {
+    background-image: url(../img/ico_fb.svg);
+}
+
+.social_links .ico_fb:hover{
+    background-image: url(../img/hover_fb.svg);
+}
+
+.social_links .ico_linked {
+    background-image: url(../img/ico_linkd.svg);
+}
+
+.social_links .ico_linked:hover{
+    background-image: url(../img/hover_linkd.svg);
+}
+
+.social_links .ico_insta {
+    background-image: url(../img/ico_inst.svg);
+}
+
+.social_links .ico_insta:hover{
+    background-image: url(../img/hover_insta.svg);
+}
+
+.social_links .ico_skype {
+    background-image: url(../img/ico_skype.svg);
+}
+
+.social_links .ico_skype:hover{
+    background-image: url(../img/hover_skype.svg);
+}
+
+.border_footer {
+    border-top: 1px solid rgb(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    
+}
+
+.under_border{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.copyright p {
+    color: #FFFFFF;
+    opacity: 0.6;
+    font-size: 16px;
+    line-height: 160%;
+}
+
+.under_link a {
+    text-align: center;
+    margin-right: 30px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.under_link a:hover{
+    color: rgba(44, 9, 141, 0.8);
+}
+

@@ -10,14 +10,21 @@ import GameStore from "./components/gameStore";
 import Home from "./components/Home";
 import Nav from "./components/nav";
 import Cart from "./components/cart";
+import {GamePromo, PromoGameCard} from "./components/promoGames";
 import {Game} from "./components/game";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const GameContext = React.createContext();
+export const CartContext = React.createContext();
+export const PromoContext = React.createContext();
 
 function App() {
-  // const [dataFind, setDataFind] = useState([]);
+  const [dataFind, setDataFind] = useState([]);
+  const [promoDataFind, setPromoDataFind] = useState([]);
+  const [promoData, setPromoData] = useState([]);
   const [data, setData] = useState([]);
+  const [cart, setCart] = useState([]);
+  console.log(data)
 
   async function getData(){
     if (data.length === 0) {
@@ -41,31 +48,81 @@ function App() {
     } 
   }
 
-  useEffect(() => {
+  async function getPromoData(){
+    const docPromo = await getDocs(collection(db, "games-promo"))
+    let dataPromo = [];
+    docPromo.forEach(d => {
+      dataPromo.push({
+        id : d.id,
+        data : d.data(),
+      });
+    });
     if(data.length === 0){
-        setData(data); 
-    }
-    console.log(data)
-     })
+      setPromoData(dataPromo);
+    };
+    localStorage.setItem('games-promo', JSON.stringify(dataPromo));
+  };
+  console.log(promoData)
+  getPromoData();
 
+  async function getCart(){
+    if (cart.length === 0) {
+      if (await JSON.parse(localStorage.getItem('cart')).length !== 0 ) {
+          setCart([...JSON.parse(localStorage.getItem('cart'))]) 
+      }
+    } 
+  }
+
+
+  getCart()
   getData();
- GameStore();
+
+
+  function addCart(id){
+    console.log(id);
+
+    if (!cart.includes(id)) {
+        setCart([...cart, id])
+    } 
+  }
+
+
+  useEffect(() => {
+    
+    if(cart){
+     localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    if(dataFind.length === 0){
+        setDataFind(data); 
+    }
+    if(promoDataFind.length === 0){
+      setPromoDataFind(promoData)
+    }
+    console.log(promoDataFind)
+     })
   
-   
+  
+
+  
   return (
-    <GameContext.Provider value={{data, setData}}>
-        <Routes>
-          <Route path='/' element={<Nav/>}>
-            <Route index element={<Home/>}/> 
-            <Route path="/game-store" element={<GameStore/>}/>
-            <Route path="game-store/:gameId" element={<Game/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/Contacts" element={<Contacts/>}/>
-            <Route path="/cart" element={<Cart/>}/>
-          </Route>
-        </Routes>
-        <Footer/>
-    </GameContext.Provider>
+    <PromoContext.Provider value={{promoDataFind, setPromoDataFind}}>
+      <CartContext.Provider value={{cart, setCart}}>
+        <GameContext.Provider value={{dataFind, setDataFind}}>
+          <Routes>
+            <Route path='/' element={<Nav/>}>
+              <Route index element={<Home/>}/> 
+              <Route path="/game-store" element={<GameStore add={addCart}/>}/>
+              <Route path="/game-store/:gameId" element={<Game add={addCart}/>}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/Contacts" element={<Contacts/>}/>
+              <Route path="/cart" element={<Cart/>}/>
+              <Route path="/:promoId" element={<PromoGameCard add={addCart}/>}/>
+            </Route>
+          </Routes>
+          <Footer/>
+        </GameContext.Provider>
+      </CartContext.Provider>
+    </PromoContext.Provider>
     
     
 

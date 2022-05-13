@@ -7,10 +7,11 @@ const Modal = ({active, setActive}) =>{
        
         <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
             <div className="modal__content" onClick={e => e.stopPropagation()}>
-            <h1>Pre-order form</h1>
+            <h1>Pre-Order Form</h1>
             <form>
                 <input type='text' placeholder='Name and Lastname'/>
                 <input type='email' placeholder='example@gmail.com'/>
+                <input type='adress' placeholder='Enter Delivery adress'/>
                 <p>Delivery methode</p>
                 <select>
                     <option value='Post-delivery'>Post-delivery</option>

@@ -1,0 +1,82 @@
+.game-card {
+    text-align: center;
+    background-image: url(../img/background_adding.png);
+}
+
+.game_card_container {
+    display: flex;
+    padding: 100px;
+}
+
+.game-trailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.game-trailer iframe {
+    margin-bottom: 50px;
+}
+
+.game-trailer p {
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(124, 124, 124, 0.2);
+}
+
+.game-trailer p span {
+    background-color: rgba(41, 34, 34, 0.8);
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+.game-trailer p:nth-child(3) span  {
+    background-color: rgba(20, 111, 230, 0.8);
+}
+
+.game-info {
+    margin-left: 30px;
+    border-radius: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-info img {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+
+
+
+.game-info .button {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 15px;
+    background-color: rgb(134, 96, 240);
+    color: #000;
+    transition: ease-in-out 0.5s;
+}
+
+.game-info .button:hover {
+    background-color: rgba(83, 159, 245, 0.726);
+    color: #fff;
+}
+
+.game-info .disabled_button {
+    background-color: rgba(83, 159, 245, 0.233);
+    color: #fff;
+    cursor: default !important;
+    transition: ease-in-out 0.5s;
+}
+
+.game-info .disabled_button:hover {
+    background-color: rgba(83, 159, 245, 0.226);
+}

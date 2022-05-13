@@ -28,7 +28,8 @@ export default function Slider(){
     };
     getData();
     return(
-      <div className='home-content'>
+      <div className='full home-slider'>
+        <div className='container slider'>
         <Carousel>
           {data.map(d => {
                   // console.log(d)
@@ -46,6 +47,7 @@ export default function Slider(){
           })}     
         </Carousel>
         <Modal active={modalActive} setActive={setModalActive}/>
+        </div>
       </div>
     )
 }

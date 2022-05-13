@@ -1,0 +1,9 @@
+.my_slider{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+.my_slider img{
+    margin-right: 40px;
+    margin-left: 40px;
+}

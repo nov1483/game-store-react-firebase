@@ -19,7 +19,13 @@
 .modal__content input {
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 40px;
 }
+
+.modal__content h1 {
+    padding: 30px;
+}
+
 .modal__content .input-button {
     padding: 5px;
     background-color: rgb(27, 21, 21);

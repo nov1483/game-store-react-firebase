@@ -1,40 +1,92 @@
-section{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
+.game-shop {
+    background-image: url(../img/background_adding.png);
+
+
 }
 
-section div img {
-    width: 250px;
-    height: 300px;
-    border-radius: 15px;
+
+.games-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 50px;
+    text-align: center;
+    color: #fff;
+    padding: 50px;
 }
 
 .game-container{
-    text-align: center;
-    width: 250px;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
 }
 
 .game-container:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: all 0.5s ease-in-out;
+    
 }
-.game-container p {
+
+.games-img {
+   margin-bottom: 10px;
+}
+
+.game-container .games-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.game-container a  {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: ease-in-out 0.5s;
+}
+
+.game-container a:hover{
+    color: rgb(134, 96, 240);
+}
+
+.game-container p:nth-child(4){
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.game-container p a {
-    color: #fff;
-    text-decoration: none;
-    
+.game-title {
+    margin: 0 15px;
 }
-.game-container button {
-    width: 80px;
-    padding: 5px;
-    background-color: #fff;
-    border: 1 px solid #000;
+
+.game_genres {
+    color: #1483cc !important;
+    background-color: #192d3ada;
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0px 10px;
+}
+
+.game-container .button {
+    background-color: rgba(96, 206, 240, 0.747);
+    padding: 5px 10px;
+    border: 0;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.game-container .store_game_button:hover{
+    background-color: rgb(134, 96, 240);
+    color: #fff;
+}
+
+.game-container .disabled_button {
+    background-color: rgba(83, 159, 245, 0.233);
+    color: #fff;
+    cursor: default !important;
+    transition: ease-in-out 0.5s;
+}
+
+.game-container .disabled_button:hover {
+    background-color: rgba(83, 159, 245, 0.226);
 }

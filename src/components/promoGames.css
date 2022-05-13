@@ -1,0 +1,77 @@
+.promo_games{
+    padding: 100px 0;
+    background-image: url(../img/background_adding.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(60, 48, 85, 0.4);
+}
+
+.promo_games h2 {
+    margin-bottom: 20px;
+}
+
+.promo_games h3 {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+.promo_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.promo_container img{
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.promo_game .promo_genres {
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+.promo_game button {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 0;
+    padding: 5px 15px;
+    background-color: #0c5f96;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.promo_game button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.promo_container .price span:first-child{
+    background-color: #4EA4DC;
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin-right: 10px;
+}
+.promo_container .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promo_container .price p {
+    text-decoration:line-through;
+    margin-bottom: 0;
+    margin-right: 10px;
+    color: #FFFFFF;
+    opacity: 0.6;
+}
+
+.promo_container .price span:last-child {
+    color: #4EA4DC;
+}

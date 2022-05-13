@@ -1,0 +1,30 @@
+.pagintaion_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.page_pagination {
+    text-align: center;
+}
+
+
+.page_pagination .active {
+    background-color: rgba(83, 159, 245, 0.726);
+    color: #fff;
+}
+
+.page_pagination button {
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(134, 96, 240);
+    
+}
+
+.page_pagination button:hover{
+   background-color: rgba(83, 159, 245, 0.726);
+   color: #fff;
+}

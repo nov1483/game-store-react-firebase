@@ -1,51 +1,80 @@
-import React, {useContext, useEffect} from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { useState, useRef } from "react";
-import {Link, useParams} from "react-router-dom";
-import db from "../db/db";
-import { Game, Games } from "./game";
+import React, {useContext} from "react";
+import { Games } from "./game";
 import {GameContext} from "../App";
+import usePagination from "./pagination/pagination";
 import "./game-store.css"
+import "./pagination/pagination.css"
 
-function GameStore() {
+function GameStore(props) {
     
-    // const [data, setData] = useState([]);
-    // const {data} = useContext(GameContext); - если раскомментировать то появляется ошибка
-   
+    const {dataFind} = useContext(GameContext);
 
-  // async function getData(){
-  //   const doc = await getDocs(collection(db, "Games"))
-  //   let dataDb = [];
-  //   doc.forEach(d => {
-  //     // console.log(d.id, d.data())
-  //     dataDb.push({
-  //       id : d.id,
-  //       data : d.data(),
-  //     });
-  //   });
-  //   if(data.length === 0){
-  //     setData(dataDb);
-  //   };
-  //   // console.log(dataDb);
-  //   localStorage.setItem('games', JSON.stringify(dataDb));
-  // };
-  // getData();
+    const {
+        totalPage,
+        nextPage,
+        prevPage,
+        setPage,
+        firstContentIndex,
+        lastContentIndex,
+        page,
+    } = usePagination({
+    contentPerPage: 12,
+    count: dataFind.length,
+})
 
-
-  
     return(
-        <section className="game-shop">
-            {/* {data.map((game, index) => {
-                // console.log(d)
+        <section className="full game-shop">
+           <div className='container games-container'>
+           
+            {dataFind.slice(firstContentIndex, lastContentIndex).map((game, index) => {
                 return (
+                  
                   <Games
                   key={index.toString()}
-                  img={game.img}
-                  title={game.title}
-                  price={game.price}
+                  img={game.data.img}
+                  title={game.data.title}
+                  genres={game.data.genres}
+                  price={game.data.price}
+                  id={game.id}
+                  add={props.add}
                   />  
+                
                 )
-            })} */}
+            })}
+            
+            </div>
+            <div className="container pagintaion_container">
+                <div className="page_pagination">
+                    <p className="text">
+                        {page}/{totalPage}
+                    </p>
+                    <button
+                        onClick={prevPage}
+                        className={`arr ${page === 1 ? 'active' : ''} `}
+                        disabled={page === 1}
+                    >
+                        &larr;
+                    </button>
+                    {[...Array(totalPage).keys()].map(el => (
+                        <button
+                            onClick={() => setPage(el + 1)}
+                            key={el.toString()}
+                            className={`page ${page === el + 1 ? 'active' : ''}`}
+                            disabled={page === el + 1}
+                        >
+                            {el + 1}
+                        </button>
+
+                    ))}
+                    <button
+                        onClick={nextPage}
+                        className={`arr ${page === 4 ? 'active' : ''}`}
+                        disabled={page === totalPage}
+                    >
+                        &rarr;
+                    </button>
+                </div>
+            </div>
         </section>
     )
     

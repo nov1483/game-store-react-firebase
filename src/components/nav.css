@@ -1,16 +1,25 @@
-header{
+
+.header_container{
     display: flex;
     align-items: center;
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 50px;
+    box-shadow: 0px 49px 100px 8px rgba(146, 151, 204, 0.651);
+
+
 }
 
 header img {
     padding: 10px;
 }
 header a {
-    margin-right: 50px;
+    margin-right: 15px;
     margin-left: 5px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 30px;
 }
 nav a {
     margin-left: 20px;
@@ -22,7 +31,7 @@ nav a {
     line-height: 16px;
 }
 nav a:hover{
-    color: rgb(124, 51, 146);
+   color: rgb(134, 96, 240);
 }
 
 nav a::after{
@@ -44,13 +53,43 @@ nav a:hover::after{
 }
 
 nav .cart {
-    font-size: 30px;
+    font-size: 22px;
 }
 
 header input {
     border: 0;
     outline: 0;
+    box-shadow: 0px 00px 25px 20px rgba(144, 36, 231, 0.4);
     border-radius: 10px;
     padding: 5px 10px;
     margin-left: 30px;
+    margin-right: 15px;
+    width: 120px;
+    transition: ease-in-out 1s;
+    background-color: transparent;
+
+}
+
+header input::placeholder {
+    color: rgba(255, 255, 255, 0.205);
+}
+
+header form input:focus {
+    width: 170px;
+    box-shadow: 0px 0px 0px 0px;
+    background-color: #9234fd94;
+    background-image: none;
+}
+
+header form button {
+    border: 0;
+    background-color: rgba(96, 206, 240, 0.747);
+    border-radius: 15px;
+    padding: 2px 7px;
+    transition: ease-in-out 0.5s;
+}
+
+header form button:hover {
+    background-color: rgb(134, 96, 240);
+    color: #fff;
 }
