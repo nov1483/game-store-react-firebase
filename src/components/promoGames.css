@@ -31,6 +31,17 @@
     border-radius: 15px;
     margin-bottom: 10px;
 }
+.promo_game a:nth-child(2) {
+    text-decoration: none;
+    color: #258bcf;
+    font-weight: bold;
+    transition: ease-in-out 0.5s;
+}
+
+.promo_game a:nth-child(2):hover{
+   color: rgb(134, 96, 240);
+   
+}
 
 .promo_game .promo_genres {
     font-size: 16px;
@@ -74,4 +85,8 @@
 
 .promo_container .price span:last-child {
     color: #4EA4DC;
+}
+
+.game_trailer p .promo_price {
+    background-color: #0c5f96;
 }

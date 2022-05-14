@@ -80,3 +80,13 @@
 .game-info .disabled_button:hover {
     background-color: rgba(83, 159, 245, 0.226);
 }
+
+.old_price {
+    text-decoration: line-through;
+}
+
+.promo_price {
+    background-color: rgb(134, 96, 240) !important;
+    color: #000;
+    font-weight: bold;
+}

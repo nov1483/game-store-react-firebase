@@ -8,35 +8,9 @@ import { CartContext, PromoContext } from "../App";
 
 
 function GamePromo(){
-  let {promoDataFind} = useContext(PromoContext);
-  
-    // async function getPromoData(){
-    //       const doc = await getDocs(collection(db, "games-promo"))
-    //       let dataDb = [];
-    //       doc.forEach(d => {
-    //         // console.log(d.id, d.data())
-    //         dataDb.push({
-    //           id : d.id,
-    //           data : d.data(),
-    //         });
-    //       });
-    //       if(data.length === 0){
-    //         setData(dataDb);
-    //       };
-    //       // console.log(dataDb);
-    //       localStorage.setItem('games-promo', JSON.stringify(dataDb));
-    //     };
 
-    // getPromoData();
-      
-      
-    // useEffect(() => {
-    //     if(data.length === 0){
-    //         setData(data); 
-    //     }
-    //     console.log(data)
-    //      })
-    // getData();
+  const {promoDataFind} = useContext(PromoContext);
+ 
     
     return(
         <div className="full promo_games">
@@ -49,7 +23,7 @@ function GamePromo(){
                    <div key={index} className="promo_game">
                        
                        <Link to={`${g.id}`}><img src={g.data.img}  alt="game_img"></img></Link>
-                       <p>{g.data.title}</p>
+                       <Link to={`${g.id}`}><p>{g.data.title}</p></Link>
                        <p className="promo_genres">{g.data.genres}</p>
                        <button>To Cart</button>
                        <div className="price">
@@ -67,21 +41,25 @@ function GamePromo(){
     )
 }
 
-function PromoGameCard(){
+ function PromoGameCard(){
+    const [isLoaded, setIsLoaded] = useState(false);
     const {promoDataFind} = useContext(PromoContext)
-    const {cart, setCart} = useContext(CartContext);
+    const {cart} = useContext(CartContext);
     const id = useParams();
     const promoGame = promoDataFind.find(g => g.id === id.promoId);
     console.log(promoGame)
+    useEffect( () => {
+        setIsLoaded(promoGame)
+    })
 
-    function promoAdd(id){
-        if(!cart.includes(id)){
-            setCart([...promoGame, id])
-        }
-        
+    if(!isLoaded){
+        return(
+            <p>Loading...</p>
+        )
     }
 
     return(
+        <>
       <div className=" full game-card">
             <h1 key={id}>{promoGame.data.title}</h1>
             <div className="container game_card_container">
@@ -90,7 +68,7 @@ function PromoGameCard(){
                     <iframe width="600" height="400" src={promoGame.data.trailer} frameBorder="0" allowFullScreen></iframe>
                     <p>{promoGame.data.text}</p>
                     <p>Genres: <span>{promoGame.data.genres}</span></p>
-                    <p>Price: <span>{promoGame.data.price}</span></p>
+                    <p>Price: <span className="old_price">{promoGame.data.oldPrice}</span> <span className="promo_price"> Promo Price : {promoGame.data.price}</span></p>
                 </div>
                 <div className="game-info">
                     
@@ -103,6 +81,7 @@ function PromoGameCard(){
                 </div>
             </div>
         </div>
+        </>
     )
     
 }

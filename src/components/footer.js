@@ -23,9 +23,9 @@ function Footer(){
                 <div className="nav_about">
                     <div className="about_links">
                         <h2>About</h2>
-                        <Link to='/about'>Support Center</Link>
-                        <Link to='/about'>Customer Support</Link>
-                        <Link to='/about'>Get In Touch</Link>
+                        <Link to='/contacts'>Support Center</Link>
+                        <Link to='/contacts'>Customer Support</Link>
+                        <Link to='/contacts'>Get In Touch</Link>
                         <Link to='/about'>App store</Link>
                     </div>
                 </div>

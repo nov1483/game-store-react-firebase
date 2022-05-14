@@ -15,7 +15,7 @@ function About(){
         <main className="full about_main">
             <section className="full about_block">
                 <div className="container about_container">
-                    <h1>About</h1>
+                    <h1>About Us</h1>
                 </div>
             </section>
             <section className="full about_info">
@@ -26,7 +26,7 @@ function About(){
                     </div>
                     <div className="about_content">
                         <h2>Forever Physical</h2>
-                        <p>Game Branch Store is a premium publisher of physical games. 
+                        <p><span>Game Branch Store</span> is a premium publisher of physical games. 
                             We’re here to bring your favorite digital releases to life
                             on a number of systems — including the Nintendo Switch, 
                             Playstation 4 and 5, retro consoles, and more! Since our 

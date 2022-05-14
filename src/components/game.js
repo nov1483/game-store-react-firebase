@@ -5,12 +5,21 @@ import "./game.css"
 
 
 function Game(props){
+    const [isLoaded, setIsLoaded] = useState(false);
     const {dataFind} = useContext(GameContext);
     const {cart} = useContext(CartContext);
     const id = useParams()
     const game = dataFind.find(elem => elem.id === id.gameId);
     console.log(game)
-    
+    useEffect(() => {
+        setIsLoaded(true)
+    })
+
+    if(!isLoaded){
+        return(
+            <p>Loading...</p>
+        )
+    }
     return(
         <div className=" full game-card">
             <h1 key={id}>{game.data.title}</h1>

@@ -1,0 +1,118 @@
+.contacts {
+    padding: 70px;
+    background-image: url(../img/background_adding.png);
+}
+
+.container_contacts h1 {
+    margin-bottom: 40px;
+    
+    text-align: center;
+}
+
+.form_contact_container {
+    display: flex;
+    border-radius: 0px 401px 401px 345.5px;
+    box-shadow: 0px 0px 246px 47px rgba(118, 77, 231, 0.8);
+    background: linear-gradient(180deg, #3E3457 0%, rgba(123, 99, 182, 0) 100%);
+    padding: 60px;
+}
+
+.form_info  {
+    width: 30vw;
+    margin-right: 40px;
+    
+}
+
+.form_info h2,
+.form_info p {
+    margin-bottom: 30px;
+}
+
+.get_in_touch_contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 40px;
+    padding: 40px;
+    background-color: rgba(134, 96, 240, 0.5);
+    border-radius: 20px;
+    transition: ease-in-out 0.5s;
+}
+
+.get_in_touch_contact form:hover {
+    box-shadow: 0px 0px 5px 3px rgba(34, 129, 238, 0.6);
+}
+
+.get_in_touch_contact form input {
+    margin-bottom: 20px;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 10px 5px;
+    transition: ease-in-out 0.3s;
+    border-radius: 15px;
+}
+
+.get_in_touch_contact form input:hover,
+.get_in_touch_contact form input:focus {
+    box-shadow: inset 0px 0px 5px 3px rgba(3, 3, 3, 1);
+}
+
+.get_in_touch_contact form button {
+    border: 0;
+    background-color: rgba(34, 129, 238, 1);
+    border-radius: 15px;
+    padding: 10px 40px;
+    color: #000;
+    transition: ease-in-out 0.5s;
+    text-transform: uppercase;
+}
+
+.get_in_touch_contact form button:hover {
+    background-color: rgb(209, 57, 133);
+    color: #fff;
+}
+
+.contacts_info {
+    display: flex;
+    padding: 70px;
+}
+
+.contact_address {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact_address p {
+    background: rgb(66, 60, 60);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.contact_address h2 {
+    margin-bottom: 20px;
+}
+
+.social_contacts_links {
+    display: flex;
+}
+
+
+.social_contacts_links a {
+    margin-right: 10px;
+    background-color: rgb(134, 96, 240);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.social_contacts_links a:hover {
+    background-color: rgb(95, 228, 252);
+    color: rgb(104, 55, 238);
+    
+}

@@ -13,9 +13,14 @@
     height: 25px;
     background-image: url(../img/tear-top.png);
 }
-
+.about_container h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1px;
+}
 .about_container_info {
     display: flex;
+    padding: 60px 0;
 }
 
 .about_content{
@@ -28,6 +33,12 @@
 .about_content h2{
     font-size: 70px;
     text-transform: uppercase;
+}
+
+.about_content p span {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(134, 96, 240);
 }
 
 .about_contacts_content {
@@ -58,7 +69,7 @@
 }
 
 .copy a {
-    color: rgba(96, 206, 240, 0.747);
+    color: rgb(95, 228, 252);
     text-decoration: none;
 }
 
@@ -72,17 +83,18 @@
 
 .copy .item_contatcs_links a {
     margin-right: 10px;
-    background-color: rgba(96, 206, 240, 0.747);
+    background-color: rgb(95, 228, 252);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     text-align: center;
-    color: #fff;
+    color: rgb(104, 55, 238);
     transition: ease-in-out 0.5s;
 }
 
 .copy .item_contatcs_links a:hover {
     background-color: rgb(134, 96, 240);
+    color: #fff;
 }
 
 .about_form {
@@ -112,11 +124,11 @@
     padding: 10px 20px;
     text-transform: uppercase;
     background-color: rgb(134, 96, 240);
-    color: rgba(96, 206, 240, 1);
+    color: rgb(95, 228, 252);
     transition: ease-in-out 0.5s;
 }
 
 .about_form button:hover {
-    background-color: rgba(96, 206, 240, 1);
+    background-color: rgb(95, 228, 252);
     color: rgb(134, 96, 240);
 }
