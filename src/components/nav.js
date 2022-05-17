@@ -4,6 +4,7 @@ import logo from "../img/logo.png"
 import { CartWidget } from "./cart";
 import DataSearch from "./search/search";
 import './nav.css'
+import "../media.css"
 
 
 function Nav(){
@@ -11,15 +12,47 @@ function Nav(){
         <React.Fragment>
             <header className="full header">
                 <div className="container header_container">
-                    <Link to='/'><img src={logo} alt="logo"></img></Link>
-                    <nav>
-                        <Link to='/'>Main</Link>
-                        <Link to='game-store'>Game store</Link>
-                        <Link to='about'>About</Link>
-                        <Link to='Contacts'>Contacts</Link>
-                        <CartWidget/>
-                    </nav>
+                    
+                    <div className="menu">
+                        <div className="nav_container">
+                            <div className="burger">
+                            <input type="checkbox" className="burger__check" id="burger-check" />
+                            <label htmlFor="burger-check">
+                                <span></span>
+                            </label>
+                            <nav className="burger-nav">
+                                <ul>
+                                    <li><Link to='/'>Main</Link></li>
+                                    <li><Link to='game-store'>Game store</Link></li>
+                                    <li><Link to='about'>About</Link></li>
+                                    <li><Link to='Contacts'>Contacts</Link></li>
+                                </ul>
+                                <DataSearch/>
+                            </nav>
+                            
+                        </div> 
+                        <Link to='/'><img src={logo} alt="logo" className="logo_header"></img></Link> 
+                        <div className="nav_header">
+                        
+                        <nav className="nav">
+                            <ul>
+                                <li><Link to='/'>Main</Link></li>
+                                <li><Link to='game-store'>Store</Link></li>
+                                <li><Link to='about'>About</Link></li>
+                                <li><Link to='Contacts'>Contacts</Link></li>
+                            </ul>
+                            
+                        </nav>
+                        </div>
+                        
+                       
+                    <CartWidget/>
+                    </div>
+                    <div className="header_form">
                     <DataSearch/>
+                    </div>
+                    </div>
+                    
                 </div>
             </header>
             <Outlet/>

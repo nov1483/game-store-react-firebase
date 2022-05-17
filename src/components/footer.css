@@ -1,5 +1,5 @@
 .footer {
-    padding: 60px;
+    padding: 60px 0px;
     background-image: url(../img/black-texture-bg.jpg);
 }
 
@@ -19,11 +19,12 @@
     margin-bottom: 15px;
 }
 
-.footer_nav .nav_container {
+.footer_nav {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
-.about_links {
+.nav_about {
     display: flex;
     flex-direction: column;
 }
@@ -124,6 +125,7 @@
     opacity: 0.6;
     font-size: 16px;
     line-height: 160%;
+    margin-bottom: 0;
 }
 
 .under_link a {

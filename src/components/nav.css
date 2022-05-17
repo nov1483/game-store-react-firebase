@@ -4,7 +4,8 @@
     align-items: center;
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 50px;
-    box-shadow: 0px 49px 100px 8px rgba(146, 151, 204, 0.651);
+    box-shadow: 0px 9px 20px -1px rgba(36, 33, 39, 0.7);
+
 
 
 }
@@ -16,13 +17,40 @@ header a {
     margin-right: 15px;
     margin-left: 5px;
 }
-nav {
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_container {
+    display: flex;
+    align-items: center;
+}
+.menu .nav {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-right: 30px;
 }
-nav a {
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.nav_header li{
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav_header a {
+    margin-left: 20px;
+    margin-right: 10px;
     padding: 5px;
     color: #fff;
     text-decoration: none;
@@ -30,11 +58,11 @@ nav a {
     font-size: 16px;
     line-height: 16px;
 }
-nav a:hover{
+.nav_header a:hover{
    color: rgb(134, 96, 240);
 }
 
-nav a::after{
+.nav_header a::after{
     content:'';
 	position: absolute;
     display: block;
@@ -45,15 +73,24 @@ nav a::after{
 	background-color: rgb(223, 215, 215);
 	transition: all 1s ease;
 }
-nav a:hover::after{
+.nav_header a:hover::after{
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
 }
 
-nav .cart {
+.menu .cart {
     font-size: 22px;
+    color: #fff;
+}
+.menu .cart:hover {
+    color: rgb(134, 96, 240);
+}
+
+.header_form {
+    text-align: center;
+    width: 100%;
 }
 
 header input {
@@ -93,3 +130,165 @@ header form button:hover {
     background-color: rgb(134, 96, 240);
     color: #fff;
 }
+
+.burger {
+    display: none;
+   }
+   .burger label {
+       cursor: pointer;
+       position: relative;
+       left: 20px;
+       top: 5px;
+       width: 30px;
+       height: 20px;
+       z-index: 3;
+   }
+   
+   input.burger__check {
+       display: none;
+       
+   }
+   
+   
+   .burger label span,
+   .burger label span::before,
+   .burger label span::after {
+       position: absolute;
+       top: 5px;
+       display: block;
+       transition: all 0.5s ease;
+       width: 30px;
+       height: 5px;
+       background-color: #ffffff;
+   }
+   .burger label span::before {
+       content: "";
+       clear: both;
+       top: 7px;
+      
+   }
+   .burger label span:after {
+       content: "";
+       clear: both;
+       top: -7px;
+   }
+   
+   input.burger__check:checked ~ label>span {
+       transform: rotate(140deg);
+       width: 4px;
+       height: 20px;
+       background-color: #ffffff;
+       position: fixed;
+       top: 25px;
+       left: 30px;
+   }
+   
+   input.burger__check:checked ~ label>span::after {
+       width: 4px;
+       height: 20px;
+       top: 0px;
+       right: 0px;
+       transform: rotate(85deg);
+       background-color: #ffffff;
+   }
+
+   input.burger__check:checked ~ label>span:hover,
+   input.burger__check:checked ~ label>span:hover::after {
+       background-color: rgb(243, 56, 72);
+   }
+   input.burger__check:checked ~ label>span::before {
+       display: none;
+   }
+   
+   .burger-nav {
+       height: 50%;
+       position: fixed;
+       display: none;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center !important;
+       background-color: rgba(37, 121, 155, 0.9);
+       top: 0px;
+       left: 0px;
+       text-align: center;
+       z-index: 2;
+       transition: right 0.5s ease-in-out;
+       border-radius: 15px;
+       box-shadow: 0 0 50px 10px #1f045e inset;
+   }
+   
+   input.burger__check:checked ~ .burger-nav {
+    backdrop-filter: blur(2px);
+       display: none;
+      
+   }
+   
+   .burger-nav ul {
+       list-style-type: none;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       padding-left: 0;
+       padding: 50px;
+   }
+
+   .burger-nav form input {
+       width: auto;
+       box-shadow: 0px 00px 5px 5px rgba(220, 193, 243, 0.4);
+       background-color: #fff;
+   }
+
+   .burger-nav form input::placeholder {
+       color: rgb(134, 96, 240);
+   }
+   /* .burger-nav form input::placeholder:focus{
+       color: rgba(219, 240, 248, 0);
+   } */
+   .burger-nav form input:focus{
+       width: auto;
+   }
+
+   .burger-nav form input:focus::placeholder{
+       color: #fff;
+   }
+
+   .burger-nav form button {
+       margin-right: 20px;
+   }
+   
+   .burger-nav li a {
+       margin-bottom: 15px;
+       border-radius: 15px;
+       display: block;
+       position: relative;
+       font-weight: bold;
+       color: #ffffff;
+       font-size: 16px;
+       text-decoration: none;
+       transition: ease-in-out 0.5s;
+   }
+
+   .burger-nav li a:hover{
+     
+    color: rgb(83, 6, 128);
+       
+   }
+   .burger-nav ul > li a::after {
+    content:'';
+	position: absolute;
+    display: block;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 0;
+	background-color: rgb(223, 215, 215);
+	transition: all 1s ease;
+   
+   }
+   .burger-nav ul > li a:hover::after{
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+   }
+   

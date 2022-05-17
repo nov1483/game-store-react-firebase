@@ -1,7 +1,6 @@
 .promo_games{
     padding: 100px 0;
     background-image: url(../img/background_adding.png);
-    background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(60, 48, 85, 0.4);
 }
@@ -22,15 +21,30 @@
 
 .promo_container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 50px;
 }
 
-.promo_container img{
-    width: 250px;
-    height: 300px;
+.promo_game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promo_container .promo_img{
     border-radius: 15px;
     margin-bottom: 10px;
 }
+
+
+.promo_container .promo_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
 .promo_game a:nth-child(2) {
     text-decoration: none;
     color: #258bcf;

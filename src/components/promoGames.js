@@ -21,8 +21,9 @@ function GamePromo(){
                {promoDataFind.map ((g,index) => {
                    return(
                    <div key={index} className="promo_game">
-                       
-                       <Link to={`${g.id}`}><img src={g.data.img}  alt="game_img"></img></Link>
+                       <div className="promo_img">
+                        <Link to={`${g.id}`}><img src={g.data.img}  alt="game_img"></img></Link>
+                       </div>
                        <Link to={`${g.id}`}><p>{g.data.title}</p></Link>
                        <p className="promo_genres">{g.data.genres}</p>
                        <button>To Cart</button>

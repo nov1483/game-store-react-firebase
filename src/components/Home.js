@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "./carousel-box";
+import {Slider} from "./carousel-box";
 import SimpleSlider from "./playingSlider";
 import bringImg from "../img/bring_img.png"
 import playingBg from "../img/playing_img.jpg"
-import "./home.css"
 import {GamePromo} from "./promoGames";
+import "./home.css"
+
+
 
 
 function Home(){

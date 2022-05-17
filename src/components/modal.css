@@ -1,5 +1,5 @@
 .modal {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(245, 244, 244, 0.4);
     align-items: center;
     justify-content: center;
     pointer-events: none;
@@ -10,26 +10,55 @@
     pointer-events: all;
 }
 .modal__content {
-    background-color: #fff;
+    background-color: rgb(41, 32, 32);
     color: rgb(27, 21, 21);
     border-radius: 15px;
     transition: ease-in-out 0.5s;
     padding: 20px;
+    color: #fff;
 }
+
+.modal__content form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modal__content form select {
+    padding: 5px 3px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+   
+}
+
 .modal__content input {
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 10px 5px;
     margin-bottom: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+    transition: ease-in-out 0.5s;
 }
+
+.modal__content input:hover,
+.modal__content input:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 0px 2px 5px rgba(183, 47, 236, 0.4);
+}
+
 
 .modal__content h1 {
     padding: 30px;
 }
 
 .modal__content .input-button {
-    padding: 5px;
-    background-color: rgb(27, 21, 21);
+    padding: 10px 15px;
+    background-color: rgb(141, 67, 175);
     color: #fff;
+    width: auto;
+    transition: ease-in-out 0.5s;
 }
 .modal__content .input-button:hover{
     background-color: #fff;

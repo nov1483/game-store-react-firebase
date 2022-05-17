@@ -8,29 +8,25 @@ function Footer(){
     return(
         <footer className="full footer">
             <div className="container footer_container">
-                <div className="footer_img">
+                <div className="footer_item footer_img">
                     <Link to='/'><img src={logo} alt="logo"></img></Link>
                 </div>
-                <div className="footer_nav">
-                    <div className="nav_container">
+                <div className="footer_item footer_nav">
                         <h2>Menu</h2>
                         <Link to='/game-store'>Game Store</Link>
                         <Link to='/about'>About</Link>
                         <Link to='/contacts'>Contacts</Link>
                         <Link to='/about'>Sale</Link>
-                    </div>
                 </div>
-                <div className="nav_about">
-                    <div className="about_links">
+                <div className="footer_item nav_about">
                         <h2>About</h2>
                         <Link to='/contacts'>Support Center</Link>
                         <Link to='/contacts'>Customer Support</Link>
                         <Link to='/contacts'>Get In Touch</Link>
                         <Link to='/about'>App store</Link>
-                    </div>
                 </div>
                 
-                <div className="footer_contacts">
+                <div className="footer_item footer_contacts">
                     <h2>Contact Us</h2>
                     <div className="ico_contacts contacts_mail">
                         <i className="ico ico_mail"></i>

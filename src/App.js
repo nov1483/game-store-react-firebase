@@ -10,21 +10,24 @@ import GameStore from "./components/gameStore";
 import Home from "./components/Home";
 import Nav from "./components/nav";
 import Cart from "./components/cart";
-import {GamePromo, PromoGameCard} from "./components/promoGames";
+import {PromoGameCard} from "./components/promoGames";
 import {Game} from "./components/game";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const GameContext = React.createContext();
 export const CartContext = React.createContext();
 export const PromoContext = React.createContext();
+export const PreContext = React.createContext()
 
 function App() {
   const [dataFind, setDataFind] = useState([]);
   const [promoDataFind, setPromoDataFind] = useState([]);
   const [promoData, setPromoData] = useState([]);
+  const [preData, setPreData] = useState([])
+  const [preDataFind, setPreDataFind] = useState([])
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
-  console.log(data)
+  // console.log(data)
 
   async function getData(){
     if (data.length === 0) {
@@ -62,8 +65,26 @@ function App() {
     };
     localStorage.setItem('games-promo', JSON.stringify(dataPromo));
   };
-  console.log(promoData)
+  // console.log(promoData)
   getPromoData();
+
+  async function getSliderData(){
+    const docSlider = await getDocs(collection(db, "games-pre"))
+    let dataSlider = [];
+    docSlider.forEach(d => {
+      // console.log(d.id, d.data())
+      dataSlider.push({
+        id : d.id,
+        data : d.data(),
+      });
+    });
+    if(data.length === 0){
+      setPreData(dataSlider);
+    };
+    // console.log(dataPre);
+};
+getSliderData();
+getData();
 
   async function getCart(){
     if (cart.length === 0) {
@@ -98,31 +119,36 @@ function App() {
     if(promoDataFind.length === 0){
       setPromoDataFind(promoData)
     }
-    console.log(promoDataFind)
+    if(preDataFind.length === 0) {
+      setPreDataFind(preData)
+    }
+    console.log(preDataFind)
      })
   
   
 
   
   return (
-    <PromoContext.Provider value={{promoDataFind, setPromoDataFind}}>
-      <CartContext.Provider value={{cart, setCart}}>
-        <GameContext.Provider value={{dataFind, setDataFind}}>
-          <Routes>
-            <Route path='/' element={<Nav/>}>
-              <Route index element={<Home/>}/> 
-              <Route path="/game-store" element={<GameStore add={addCart}/>}/>
-              <Route path="/game-store/:gameId" element={<Game add={addCart}/>}/>
-              <Route path="/about" element={<About/>}/>
-              <Route path="/Contacts" element={<Contacts/>}/>
-              <Route path="/cart" element={<Cart/>}/>
-              <Route path="/:promoId" element={<PromoGameCard add={addCart}/>}/>
-            </Route>
-          </Routes>
-          <Footer/>
-        </GameContext.Provider>
-      </CartContext.Provider>
-    </PromoContext.Provider>
+    <PreContext.Provider value={{preDataFind, setPreDataFind}}>
+      <PromoContext.Provider value={{promoDataFind, setPromoDataFind}}>
+        <CartContext.Provider value={{cart, setCart}}>
+          <GameContext.Provider value={{dataFind, setDataFind}}>
+            <Routes>
+              <Route path='/' element={<Nav/>}>
+                <Route index element={<Home/>}/> 
+                <Route path="/game-store" element={<GameStore add={addCart}/>}/>
+                <Route path="/game-store/:gameId" element={<Game add={addCart}/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/Contacts" element={<Contacts/>}/>
+                <Route path="/cart" element={<Cart/>}/>
+                <Route path="/:promoId" element={<PromoGameCard add={addCart}/>}/>
+              </Route>
+            </Routes>
+            <Footer/>
+          </GameContext.Provider>
+        </CartContext.Provider>
+      </PromoContext.Provider>
+    </PreContext.Provider>
     
     
 
