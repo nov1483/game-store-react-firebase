@@ -20,8 +20,16 @@
 .carousel-caption button{
     padding: 5px;
     border-radius: 10px;
+    background-color: rgb(122, 7, 175);
+    color: #fff;
     border: 0;
     font-size: 20px;
     animation: 4s infinite animate_grow;
     margin-bottom: 10px;
+    transition: ease-in-out 0.5s;
+}
+
+.carousel-caption button:hover {
+    background-color: rgba(80, 227, 238, 0.644);
+    color: #000;
 }
