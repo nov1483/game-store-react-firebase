@@ -269,6 +269,10 @@
         margin-left: 50px;
     }
 
+    .burger-nav{
+        height: auto;
+    }
+
     .home-slider {
         box-shadow: 0px 19px 20px -10px rgb(212, 185, 228);
         padding: 20px 0;
@@ -343,12 +347,46 @@
         padding: 30px 0 20px 0;
     }
 
+    .footer_img {
+        grid-column: 1/2;
+        margin-bottom: 40px;
+        
+    } 
+    
+    .nav_about{
+        grid-column: 2/1;
+    }
+
     .footer_contacts {
-        grid-column: 4/1;
+        grid-column: 2/2;
     }
 
     .footer_nav {
         margin-bottom: 40px;
+    }
+
+    .game_card_container{
+        flex-direction: column-reverse;
+        align-items: center;
+
+    }
+
+    .game-card h1 {
+        margin-bottom: 0;
+    }
+
+    .game_card_container{
+        padding: 30px 0;
+    }
+
+    .game-trailer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .game-info{
+        margin-left: 0;
+        margin-bottom: 15px;
     }
 
     .about_container_info {
@@ -373,4 +411,293 @@
         width: 260px;
         height: 350px;
     }
+
+    .added_game img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .added_game_info button{
+        padding: 2px 5px;
+    }
 }
+
+@media (max-width: 590px) {
+
+    .burger-nav ul{
+        padding: 50px 0;
+    }
+
+    .burger-nav form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .burger-nav form input{
+        margin-bottom: 10px;
+    }
+
+    .burger-nav form button{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .bring_img {
+        display: none;
+    }
+
+    .bring_info .store_link {
+        padding: 5px 10px;
+        margin-left: 30px;
+    }
+
+    .contacts_info{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact_address {
+        margin-bottom: 30px;
+    }
+
+    .contacts_map iframe {
+        width: 370px;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .promo_container .promo_img img{
+        width: 250px;
+        height: 250px;
+    }
+    .footer_item {
+        grid-column: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_about{
+        margin-bottom: 40px;
+    }
+
+    .footer_contacts{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ico_contacts {
+        justify-content: flex-start;
+    }
+
+    .about_form  {
+        padding: 30px 0;
+        box-shadow: 0px 19px 20px -1px rgb(144, 128, 156);
+    }
+
+    .about_form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about_form form input {
+        margin-bottom: 15px;
+    }
+
+    .form_contact_container{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .form_info {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .added_game_info{
+        padding-left: 20px;
+    }
+
+    
+}
+
+@media (max-width: 445px){
+
+    .header_container .cart_widget {
+        margin-left: 10px;
+    }
+
+    .carousel-caption h3 {
+        font-size: calc(0.5rem + .6vw);
+    }
+
+    .carousel-caption p{
+        font-size: 11px;
+    }
+
+    .carousel-caption button{
+        font-size: 12px;
+    }
+
+    .column .ico{
+        width: 50px;
+        height: 50px;
+        background-size: 20px;
+    }
+
+    .bring_info .store_link {
+        margin-left: 60px;
+    }
+
+    .game-trailer iframe{
+        width: 320px;
+        height: 280px;
+    }
+
+    .about_form h2 {
+        font-size: calc(1rem + .9vw);
+    }
+
+    .about_form h2 img {
+        width: 200px;
+        height: 60px;
+    }
+
+    .about_form input{
+        width: auto;
+        padding: 15px;
+    }
+
+    .contacts_map iframe{
+        width: 290px;
+    }
+
+    .added_game img{
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+@media (max-width: 395px){
+    .my_slider img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .adding_column_container .column{
+        grid-column: 1;
+    }
+
+    .under_border {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 375px){
+
+    .header_container{
+        justify-content: center;
+    }
+    .header_container .cart_widget{
+        margin-left: 0;
+    }
+
+    .header_container .cart_widget a{
+        font-size: 16px;
+    }
+
+    .header_container .cart_widget span{
+        font-size: 10px;
+    }
+
+    .header_container .logo_header{
+        padding: 10px 0;
+        width: 150px;
+        margin-left: 20px;
+    }
+
+    .burger label span {
+        top: 2px;
+        margin-right: 20px;
+    }
+
+    .burger{
+        margin-right: 20px;
+    }
+
+    .burger-nav ul{
+        padding: 20px 0;
+    }
+
+    .burger-nav form input{
+        width: 60%;
+        transition: ease-in-out 0.5s;
+    }
+
+    .burger-nav form input:focus {
+        width: 60%;
+    }
+
+    header input{
+        margin-left: 0;
+        margin-right: 0;
+        padding: 5px 0;
+    }
+
+    .game-trailer iframe{
+        width: 255px;
+    }
+
+    .contacts_map iframe{
+        width: 250px;
+    }
+
+
+    .under_link a{
+        margin-right: 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 325px) {
+
+    .my_slider img:last-child{
+        display: none;
+    }
+    .my_slider img {
+        
+       margin-right: 5px;
+    }
+
+    .carousel-caption h3 {
+        display: none;
+    }
+
+    .carousel-caption p {
+        display: none;
+    }
+}
+
+@media (max-width: 300px){
+    .promo_container .promo_img img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .game-container .games-img img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .get_in_touch_contact form{
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .get_in_touch_contact form:hover{
+        box-shadow: 0px 0px 0px 0px rgb(34 129 238 / 60%);
+    }
+}
+

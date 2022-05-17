@@ -30,13 +30,13 @@ function Footer(){
                     <h2>Contact Us</h2>
                     <div className="ico_contacts contacts_mail">
                         <i className="ico ico_mail"></i>
-                        <p>Jhonesing567@gmail.com</p>
+                        <p>Game_Branch8314@gmail.com</p>
                     </div>
-                    <div className="ico_contacts contacts_mail">
+                    <div className="ico_contacts contacts_mobile">
                         <i className="ico ico_mobile"></i>
                         <p>1-888-058-3728</p>
                     </div>
-                    <div className="ico_contacts contacts_mail">
+                    <div className="ico_contacts contacts_phone">
                         <i className="ico ico_phone"></i>
                         <p>1-888-058-3728</p>
                     </div>
