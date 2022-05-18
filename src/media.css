@@ -540,6 +540,25 @@
         font-size: 12px;
     }
 
+    .modal__content {
+        padding: 0;
+    }
+
+    .modal__content input{
+        width: auto;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    .modal__content .input-button{
+        padding: 5px 15px;
+    }
+
+    .modal__content h1{
+        padding: 10px;
+        font-size: calc(1.1rem + 1.5vw);
+    }
+
     .column .ico{
         width: 50px;
         height: 50px;
@@ -623,12 +642,17 @@
         margin-right: 20px;
     }
 
+    input.burger__check:checked ~ label>span{
+        top: 10px;
+        left: 17px;
+    }
+
     .burger{
         margin-right: 20px;
     }
 
     .burger-nav ul{
-        padding: 20px 0;
+        padding-bottom: 20px;
     }
 
     .burger-nav form input{
