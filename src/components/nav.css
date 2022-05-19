@@ -203,23 +203,24 @@ header form button:hover {
    .burger-nav {
        height: auto;
        position: fixed;
-       display: none;
+       display: flex;
        flex-direction: column;
        justify-content: center;
        align-items: center !important;
        background-color: rgba(37, 121, 155, 0.4);
        top: 0px;
-       left: 0px;
+       left: -100%;
        text-align: center;
        z-index: 3;
-       transition: right 0.5s ease-in-out;
+       transition: all 1000ms cubic-bezier(0.280, -0.315, 0.685, 1.390);  
        border-radius: 15px;
        box-shadow: 0 0 50px 10px #1f045e inset;
    }
    
    input.burger__check:checked ~ .burger-nav {
-    backdrop-filter: blur(2px);
-       display: none;
+        backdrop-filter: blur(2px);
+        left: 0;
+        transition-duration: 1.25s;
       
    }
    
@@ -229,7 +230,9 @@ header form button:hover {
        flex-direction: column;
        padding-left: 0;
        padding: 50px;
+       transition-duration: .25s;
    }
+
 
    .burger-nav form input {
        width: auto;

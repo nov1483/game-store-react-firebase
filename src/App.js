@@ -10,7 +10,7 @@ import GameStore from "./components/gameStore";
 import Home from "./components/Home";
 import Nav from "./components/nav";
 import Cart from "./components/cart";
-import {PromoGameCard} from "./components/promoGames";
+import {GamePromo, PromoGameCard} from "./components/promoGames";
 import {Game} from "./components/game";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -135,13 +135,15 @@ getData();
           <GameContext.Provider value={{dataFind, setDataFind}}>
             <Routes>
               <Route path='/' element={<Nav/>}>
-                <Route index element={<Home/>}/> 
+                <Route index element={<Home add={addCart}/>}/> 
                 <Route path="/game-store" element={<GameStore add={addCart}/>}/>
                 <Route path="/game-store/:gameId" element={<Game add={addCart}/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Contacts" element={<Contacts/>}/>
                 <Route path="/cart" element={<Cart/>}/>
-                <Route path="/:promoId" element={<PromoGameCard add={addCart}/>}/>
+                <Route index element={<GamePromo add={addCart}/> }/>
+                <Route path="/:promoId" element={<PromoGameCard add={addCart}/> }/>
+                
               </Route>
             </Routes>
             <Footer/>

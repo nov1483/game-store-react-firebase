@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import {Slider} from "./carousel-box";
 import SimpleSlider from "./playingSlider";
@@ -6,11 +6,16 @@ import bringImg from "../img/bring_img.png"
 import playingBg from "../img/playing_img.jpg"
 import {GamePromo} from "./promoGames";
 import "./home.css"
+import "./promoGames.css"
+import { PromoContext } from "../App";
 
 
 
 
-function Home(){
+function Home(props){
+    const {promoDataFind} = useContext(PromoContext);
+
+    console.log(props)
     return(
         <div className="home-page">
             <h1>Pre-Order Games</h1>
@@ -85,7 +90,29 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <GamePromo />
+            <div className="full promo_games">
+                <h2>Games On Sale</h2>
+                <h3>Starting a game store business can be an exciting way to achieve</h3>
+                <div className="container promo_container">
+                    {promoDataFind.map((game, index) =>{
+                        return(
+                        <div key={index} className="promo_game">
+                            <GamePromo
+                                key={index.toString()}
+                                img={game.data.img}
+                                title={game.data.title}
+                                genres={game.data.genres}
+                                oldPrice ={game.data.oldPrice}
+                                price={game.data.price}
+                                id={game.id}
+                                add={props.add}
+                            />
+                        </div>
+                        );
+                    }
+                    )}
+                </div>
+            </div>     
         </div>
     )
 }

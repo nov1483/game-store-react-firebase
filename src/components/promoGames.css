@@ -78,6 +78,16 @@
     color: #000;
 }
 
+.promo_game .disabled_button{
+    background-color: #0c5f964d;
+}
+
+.promo_game .disabled_button:hover {
+    background-color: #0c5f964d;
+    color: #fff;
+    cursor: default;
+}
+
 .promo_container .price span:first-child{
     background-color: #4EA4DC;
     border-radius: 10px;
@@ -103,4 +113,9 @@
 
 .game_trailer p .promo_price {
     background-color: #0c5f96;
+}
+
+.game-info .disabled_button:hover {
+    color: #fff;
+    box-shadow: none;
 }

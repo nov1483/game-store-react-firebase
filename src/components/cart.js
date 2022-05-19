@@ -21,10 +21,10 @@ function Cart(){
     const {cart, setCart} = useContext(CartContext);
     const {dataFind} = useContext(GameContext);
     const {promoDataFind} = useContext(PromoContext);
-    const promoCartData = promoDataFind.filter(g => cart.includes(g.id))
-    console.log(promoCartData)
-    const cartData = dataFind.filter( g => cart.includes(g.id));
-    const totalPrice = cartData.reduce((sum, item) => sum += parseFloat(item.data.price), 0);
+    const array = [].concat(dataFind, promoDataFind);
+    console.log(array);
+    const cartData = array.filter( g => cart.includes(g.id));
+    const totalPrice = cartData.reduce((sum, item) => sum += parseFloat(item.data.price), 0).toFixed(2);
     console.log(cartData)
 
     function removeItem(id){

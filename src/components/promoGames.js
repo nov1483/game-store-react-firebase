@@ -5,59 +5,46 @@ import db from "../db/db";
 import "./promoGames.css"
 import { CartContext, PromoContext } from "../App";
 
-
-
-function GamePromo(){
-
-  const {promoDataFind} = useContext(PromoContext);
- 
-    
-    return(
-        <div className="full promo_games">
-            <h2>Games On Sale</h2>
-            <h3>Starting a game store business can be an exciting way to achieve</h3>
-            <div className="container promo_container">
-                
-               {promoDataFind.map ((g,index) => {
-                   return(
-                   <div key={index} className="promo_game">
-                       <div className="promo_img">
-                        <Link to={`${g.id}`}><img src={g.data.img}  alt="game_img"></img></Link>
-                       </div>
-                       <Link to={`${g.id}`}><p>{g.data.title}</p></Link>
-                       <p className="promo_genres">{g.data.genres}</p>
-                       <button>To Cart</button>
-                       <div className="price">
-                            <span>-50%</span>
-                            <p>{g.data.oldPrice}</p>
-                            <span>{g.data.price}</span>
-                       </div>
-                   </div>
-                   )
-               })    
-               } 
-                
+function GamePromo(props){
+    const { title, genres, price, oldPrice, img, id, add } = props;
+    const {cart} = useContext(CartContext);
+   
+      return(             
+            <div className="promo_games_container">
+                <div className="promo_img">
+                    <Link to={`${id}`}><img src={img}  alt="game_img"></img></Link>
+                </div>
+                <Link to={`${id}`}><p>{title}</p></Link>
+                <p className="promo_genres">{genres}</p>
+                <button onClick={() => add(id)}
+                    className={cart.includes(id) ? 'button disabled_button': 'button button_game_card'}>   
+                    {cart.includes(id) ? 'Added' : 'Add To Cart'}
+                </button>
+                <div className="price">
+                    <span>-50%</span>
+                    <p>{oldPrice}</p>
+                    <span>{price}</span>
+                </div>                                                    
             </div> 
-        </div>
-    )
-}
-
- function PromoGameCard(){
+      );
+  };
+  
+ function PromoGameCard(props){
     const [isLoaded, setIsLoaded] = useState(false);
     const {promoDataFind} = useContext(PromoContext)
     const {cart} = useContext(CartContext);
     const id = useParams();
     const promoGame = promoDataFind.find(g => g.id === id.promoId);
-    console.log(promoGame)
+    
     useEffect( () => {
         setIsLoaded(promoGame)
-    })
+    });
 
     if(!isLoaded){
         return(
             <p>Loading...</p>
-        )
-    }
+        );
+    };
 
     return(
         <>
@@ -75,17 +62,17 @@ function GamePromo(){
                     
                     <img src={promoGame.data.img} alt='game'></img>
                     
-                    <button onClick={() => console.log(promoGame)}
-                            className={cart.includes(id.gameId) ? 'button disabled_button': 'button button_game_card'}>   
-                                {cart.includes(id.gameId) ? 'Added' : 'Add To Cart'}
+                    <button onClick={() => props.add(promoGame.id)}
+                            className={cart.includes(promoGame.id) ? 'button disabled_button': 'button button_game_card'}>   
+                                {cart.includes(promoGame.id) ? 'Added' : 'Add To Cart'}
                     </button>
                 </div>
             </div>
         </div>
         </>
-    )
+    );
     
-}
+};
 
 
 export {GamePromo, PromoGameCard};
