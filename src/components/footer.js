@@ -1,6 +1,6 @@
 import React from "react";
 import {Link, Outlet} from "react-router-dom"
-import logo from "../img/logo.png"
+import logo from "../img/logo_1.png"
 import "./footer.css"
 
 
@@ -9,21 +9,21 @@ function Footer(){
         <footer className="full footer">
             <div className="container footer_container">
                 <div className="footer_item footer_img">
-                    <Link to='/'><img src={logo} alt="logo"></img></Link>
+                    <Link to='/' onClick={() => window.scrollTo(0,0)}><img src={logo} alt="logo"></img></Link>
                 </div>
                 <div className="footer_item footer_nav">
                         <h2>Menu</h2>
-                        <Link to='/game-store'>Game Store</Link>
-                        <Link to='/about'>About</Link>
-                        <Link to='/contacts'>Contacts</Link>
-                        <Link to='/about'>Sale</Link>
+                        <Link to='/game-store'  onClick={() => window.scrollTo(0,0)}>Game Store</Link>
+                        <Link to='/about'  onClick={() => window.scrollTo(0,0)}>About</Link>
+                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Contacts</Link>
+                        <Link to='/'  onClick={() => window.scrollTo(2400,2400)}>Sale</Link>
                 </div>
                 <div className="footer_item nav_about">
                         <h2>About</h2>
-                        <Link to='/contacts'>Support Center</Link>
-                        <Link to='/contacts'>Customer Support</Link>
-                        <Link to='/contacts'>Get In Touch</Link>
-                        <Link to='/about'>App store</Link>
+                        <Link to='/contacts' onClick={() => window.scrollTo(0,0)}>Support Center</Link>
+                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Customer Support</Link>
+                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Get In Touch</Link>
+                        <Link to='/about'  onClick={() => window.scrollTo(0,0)}>App store</Link>
                 </div>
                 
                 <div className="footer_item footer_contacts">
@@ -55,7 +55,7 @@ function Footer(){
                         <p>@Copyrignt 2021</p>
                     </div>
                     <div className="under_link">
-                        <Link to="/about">Privacy Policy</Link>
+                        <Link to="/about"  onClick={() => window.scrollTo(0,0)}>Privacy Policy</Link>
                         <a href="https://www.figma.com/file/mwnEwfJbIiL1V5Hq8P8BKH/gamerlandingpage-(Copy)?node-id=0%3A1">Webdesign</a>
 
                     </div>

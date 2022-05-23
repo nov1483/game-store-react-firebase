@@ -12,9 +12,9 @@ function GamePromo(props){
       return(             
             <div className="promo_games_container">
                 <div className="promo_img">
-                    <Link to={`${id}`}><img src={img}  alt="game_img"></img></Link>
+                    <Link to={`${id}`} onClick={() => window.scrollTo(0,0)}><img src={img}  alt="game_img"></img></Link>
                 </div>
-                <Link to={`${id}`}><p>{title}</p></Link>
+                <Link to={`${id}`} onClick={() => window.scrollTo(0,0)}><p>{title}</p></Link>
                 <p className="promo_genres">{genres}</p>
                 <button onClick={() => add(id)}
                     className={cart.includes(id) ? 'button disabled_button': 'button button_game_card'}>   
@@ -35,7 +35,7 @@ function GamePromo(props){
     const {cart} = useContext(CartContext);
     const id = useParams();
     const promoGame = promoDataFind.find(g => g.id === id.promoId);
-    
+
     useEffect( () => {
         setIsLoaded(promoGame)
     });

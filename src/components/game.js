@@ -16,6 +16,7 @@ function Game(props){
     })
 
     if(!isLoaded){
+        
         return(
             <p>Loading...</p>
         )
@@ -54,9 +55,9 @@ function Games(props){
      
             <div className="game-container">
                 <div className="games-img">
-                <Link to={`${id}`}> <img src= {img} alt='game'/></Link>
+                <Link to={`${id}`} onClick={() => window.scrollTo(0,0)}> <img src= {img} alt='game'/></Link>
                 </div>
-                <Link to={`${id}`} className='game-title'>{title}</Link>
+                <Link to={`${id}`} className='game-title' onClick={() => window.scrollTo(0,0)}>{title}</Link>
                 <p className="game_genres">{genres}</p>
                 <p>{price}</p>
                 <button onClick={() => add(id)}

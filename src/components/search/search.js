@@ -27,7 +27,7 @@ function DataSearch(){
     return (
         <form action="" onSubmit={handleFind}>
             <input ref={inputRef} type="text" placeholder='Write a game...' onChange={handleFind}/>
-            <button type='submit'>Search<VscSearch/></button>
+            <button type='submit' onClick={() => window.scrollTo(0,0)}>Search<VscSearch/></button>
         </form>
     )
   

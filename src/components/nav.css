@@ -5,17 +5,10 @@
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 50px;
     box-shadow: 0px 9px 20px -1px rgba(36, 33, 39, 0.7);
-
-
-
 }
 
 header img {
     padding: 10px;
-}
-header a {
-    margin-right: 15px;
-    margin-left: 5px;
 }
 
 .menu {
@@ -39,6 +32,11 @@ header a {
     display: flex;
     list-style: none;
     margin-bottom: 0;
+    padding-left: 0;
+}
+
+.nav_header {
+    margin-left: 50px;
 }
 
 .nav_header li{
@@ -49,8 +47,6 @@ header a {
 
 
 .nav_header a {
-    margin-left: 20px;
-    margin-right: 10px;
     padding: 5px;
     color: #fff;
     text-decoration: none;
@@ -62,7 +58,8 @@ header a {
    color: rgb(134, 96, 240);
 }
 
-.nav_header a::after{
+.nav_header a::after,
+.nav ul .drop_menu .submenu a::after{
     content:'';
 	position: absolute;
     display: block;
@@ -73,12 +70,56 @@ header a {
 	background-color: rgb(223, 215, 215);
 	transition: all 1s ease;
 }
-.nav_header a:hover::after{
+.nav_header a:hover::after,
+.nav ul .drop_menu .submenu a:hover::after{
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
 }
+
+.nav ul .drop_menu{
+    position: relative;
+}
+
+.nav ul .drop_menu a::after {
+    width: 0;
+}
+
+.nav ul .drop_menu a svg {
+    position: absolute;
+    top: 8px;
+}
+
+.nav ul .drop_menu:hover .submenu {
+    display: flex;
+    transform: scaleY(1);
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(134, 96, 240, 0.267);
+    width: 100px;
+}
+
+.nav li .submenu {
+    position: absolute;
+    transform: scaleY(0);
+    top: 25px;
+    left: -25px;
+    transition: ease-in-out 0.5s;
+}
+
+.nav li .submenu li {
+    margin-left: 0;
+    margin-bottom: 15px;
+}
+
+.nav li .submenu li:first-child {
+    padding-top: 15px;
+}
+
+
 
 .menu .cart {
     font-size: 22px;

@@ -10,6 +10,7 @@ import GameStore from "./components/gameStore";
 import Home from "./components/Home";
 import Nav from "./components/nav";
 import Cart from "./components/cart";
+import {PreOrder, PreOrderCard} from "./components/preorder";
 import {GamePromo, PromoGameCard} from "./components/promoGames";
 import {Game} from "./components/game";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -125,9 +126,6 @@ getData();
     console.log(preDataFind)
      })
   
-  
-
-  
   return (
     <PreContext.Provider value={{preDataFind, setPreDataFind}}>
       <PromoContext.Provider value={{promoDataFind, setPromoDataFind}}>
@@ -141,9 +139,10 @@ getData();
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Contacts" element={<Contacts/>}/>
                 <Route path="/cart" element={<Cart/>}/>
+                <Route path="/pre-order" element={<PreOrder/>}/>
+                <Route path="/pre-order/:preOrderId" element={<PreOrderCard/>}/>
                 <Route index element={<GamePromo add={addCart}/> }/>
                 <Route path="/:promoId" element={<PromoGameCard add={addCart}/> }/>
-                
               </Route>
             </Routes>
             <Footer/>

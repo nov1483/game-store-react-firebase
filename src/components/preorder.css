@@ -1,0 +1,91 @@
+.pre_order_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 50px;
+    padding: 62px 0;
+}
+
+.pre_order_game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pre_order_game .pre_order_img img {
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.pre_order_game .pre_order_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pre_order_game .pre_order_info a {
+    text-decoration: none;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.pre_order_game .pre_order_info a:hover {
+    color: rgb(134, 96, 240);
+}
+
+.pre_order_game .pre_order_info p{
+    margin-bottom: 10px;
+}
+
+.pre_order_game .pre_order_info p:first-child {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.pre_order_game .pre_order_info p:nth-child(2) {
+    border-radius: 5px;
+    padding: 0 3px;
+    background-color: rgba(27, 37, 37, 0.644);
+}
+
+.pre_order_game .pre_order_info button {
+    background-color: rgb(17, 157, 182);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.pre_order_game .pre_order_info button:hover {
+    background-color: rgb(153, 39, 206);
+    color: #000;
+}
+
+.pre_game_card_info {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.pre_order_card_img {
+    width: 400px;
+    height: 230px;
+    margin-bottom: 20px;
+}
+
+.pre_game_card_info button {
+    padding: 10px 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(134, 96, 240);
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.pre_game_card_info button:hover {
+    background-color: #fff;
+    color: #000;
+}
+

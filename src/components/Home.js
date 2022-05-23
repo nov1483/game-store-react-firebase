@@ -5,16 +5,16 @@ import SimpleSlider from "./playingSlider";
 import bringImg from "../img/bring_img.png"
 import playingBg from "../img/playing_img.jpg"
 import {GamePromo} from "./promoGames";
+import { PromoContext } from "../App";
 import "./home.css"
 import "./promoGames.css"
-import { PromoContext } from "../App";
+
 
 
 
 
 function Home(props){
     const {promoDataFind} = useContext(PromoContext);
-
     console.log(props)
     return(
         <div className="home-page">
@@ -65,7 +65,7 @@ function Home(props){
                             combined with close contact to our players, creates 
                             a strong foundation that promotes the continued
                         </p>
-                        <Link to='game-store' className="store_link">To Game Store</Link>
+                        <Link to='game-store' className="store_link" onClick={() => window.scrollTo(0,0)}>To Game Store</Link>
                     </div>
                 </div>
                 

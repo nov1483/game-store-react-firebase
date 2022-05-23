@@ -1,3 +1,5 @@
+
+
 @media (max-width: 1399px){
     .promo_game:last-child{
         grid-column: 2;
@@ -5,10 +7,10 @@
 }
 
 @media (max-width: 1199px) {
-    
-    .menu {
-        flex-direction: column;
+    .home-page h1 {
+        font-size: calc(1rem + 1.5vw)
     }
+    
 
     .header_container .logo_header {
         width: 200px;
@@ -16,16 +18,14 @@
     .header_form {
         text-align: left;
     }
-    .header_form form input {
-        padding: 2px 10px;
-        width: auto;
-        margin-bottom: 10px;
-        margin-left: 10px;
+  
+    .carousel-caption button{
+        padding: 3px 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
     }
 
-    .header_form form input:focus{
-        width: auto;
-    }
+  
 
 
     .bring_game {
@@ -39,6 +39,15 @@
     .game-info img {
         width: 300px;
         height: 300px;
+    }
+
+    .pre_game_card_info {
+        margin-left: 20px;
+    }
+
+    .pre_game_card_info .pre_order_card_img {
+        width: 310px;
+        height: 210px;
     }
 
     .contacts {
@@ -86,7 +95,7 @@
     }
 
     .cart_widget {
-        margin-right: 50px;
+        margin-left: 50px;
     }
 
     .header_form form {
@@ -147,6 +156,12 @@
         width: 250px;
         height: 250px;
     }
+
+    .pre_game_card_info .pre_order_card_img {
+        width: 250px;
+        height: 150px;
+    }
+
 
     .about_image img {
         width: 400px;
@@ -278,6 +293,10 @@
         padding: 20px 0;
     }
 
+    .carousel {
+        width: 100% !important;
+    }
+
     .carousel-caption h3 {
         font-size: calc(0.9rem + .6vw);
         margin-bottom: 0;
@@ -288,7 +307,7 @@
     }
 
     .carousel-caption button{
-        padding: 1px;
+        padding: 1px 10px;
         font-size: 15px;
         margin-bottom: 5px;
     }
@@ -341,6 +360,11 @@
     .promo_container .promo_img img{
         width: 300px;
         height: 300px;
+    }
+
+    .pre_game_card_info{
+        margin-bottom: 30px;
+        margin-left: 0;
     }
 
     .footer {
@@ -525,19 +549,25 @@
 @media (max-width: 445px){
 
     .header_container .cart_widget {
-        margin-left: 10px;
+        margin-left: 30px;
+    }
+
+    .slider_info{
+        margin-bottom: 2px;
     }
 
     .carousel-caption h3 {
-        font-size: calc(0.5rem + .6vw);
+        font-size: calc(0.4rem + .6vw);
+        
     }
 
     .carousel-caption p{
-        font-size: 11px;
+        font-size: 7px;
     }
 
     .carousel-caption button{
-        font-size: 12px;
+        font-size: 10px;
+        padding: 1px 10px;
     }
 
     .modal__content {
@@ -619,9 +649,7 @@
     .header_container{
         justify-content: center;
     }
-    .header_container .cart_widget{
-        margin-left: 0;
-    }
+ 
 
     .header_container .cart_widget a{
         font-size: 16px;

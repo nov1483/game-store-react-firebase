@@ -34,8 +34,8 @@ function usePagination({contentPerPage, count}){
 
     return {
         totalPage: pageCount,
-        nextPage: () => changePage(true),
-        prevPage: () => changePage(false),
+        nextPage: () => {changePage(true); window.scrollTo(0,0)},
+        prevPage: () => {changePage(false); window.scrollTo(0,0)},
         setPage: setPageSalfe,
         firstContentIndex,
         lastContentIndex,

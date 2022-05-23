@@ -61,7 +61,7 @@ function Cart(){
         }) : <h2 className="empty_cart">Cart is Empty!</h2>}
                <div className="cart_total">
                     <p> Total price : {totalPrice}$</p>
-                    <button onClick={() => clearCart()}>Clear Cart</button>
+                    <button onClick={() => {clearCart(); window.scrollTo(0,0)}}>Clear Cart</button>
                 </div>
             </div>
         </div>

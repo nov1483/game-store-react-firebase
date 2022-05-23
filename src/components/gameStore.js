@@ -50,6 +50,7 @@ function GameStore(props) {
                     </p>
                     <button
                         onClick={prevPage}
+                        
                         className={`arr ${page === 1 ? 'active' : ''} `}
                         disabled={page === 1}
                     >
@@ -57,7 +58,7 @@ function GameStore(props) {
                     </button>
                     {[...Array(totalPage).keys()].map(el => (
                         <button
-                            onClick={() => setPage(el + 1)}
+                            onClick={() => {setPage(el + 1);window.scrollTo(0,0)}}
                             key={el.toString()}
                             className={`page ${page === el + 1 ? 'active' : ''}`}
                             disabled={page === el + 1}
