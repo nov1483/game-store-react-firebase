@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import aboutImage from "../img/about_img.png";
 import {ImNewspaper} from "react-icons/im";
 import {BiConversation} from "react-icons/bi";
@@ -11,6 +11,31 @@ import {BsTwitch} from "react-icons/bs"
 import logo from "../img/logo.png"
 import "./about.css"
 function About(){
+
+    const [email, setEmail] = useState('');
+    const [emailDirty, setEmailDirty] = useState(false);
+    const [emailError, setEmailError] = useState('E-mail cannot be empty');
+
+    const emailHandler = (e) => {
+        setEmail(e.target.value)
+        const emailRe = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        if(!emailRe.test(String(e.target.value).toLowerCase())){
+            setEmailError('Uncorrect E-mail')
+        }else {
+            setEmailError('')
+        }
+    }
+
+    const blurHandler = (e) => {
+        switch (e.target.name) {
+    
+            case 'email' :
+                setEmailDirty(true);
+                break   
+        }
+    }
+
+
     return(
         <main className="full about_main">
             <section className="full about_block">
@@ -92,7 +117,8 @@ function About(){
                 <div className="full about_form">
                         <h2>NEVER MISS OUT ON A <img src={logo} alt='logo'></img> RELEASE AGAIN</h2>
                         <form action="">
-                            <input type='text' placeholder='Email Address'></input>
+                            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
+                            <input  onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='Email Address'></input>
                             <button>Submit</button>
                         </form>
                 </div>

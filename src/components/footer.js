@@ -13,17 +13,21 @@ function Footer(){
                 </div>
                 <div className="footer_item footer_nav">
                         <h2>Menu</h2>
-                        <Link to='/game-store'  onClick={() => window.scrollTo(0,0)}>Game Store</Link>
-                        <Link to='/about'  onClick={() => window.scrollTo(0,0)}>About</Link>
-                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Contacts</Link>
-                        <Link to='/'  onClick={() => window.scrollTo(2400,2400)}>Sale</Link>
+                        <ul>
+                            <li><Link to='/game-store'  onClick={() => window.scrollTo(0,0)}>Game Store</Link></li>
+                            <li><Link to='/about'  onClick={() => window.scrollTo(0,0)}>About</Link></li>
+                            <li><Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Contacts</Link></li>
+                            <li><Link to='/'  onClick={() => window.scrollTo(2500,2500)}>Sale</Link></li>
+                        </ul>
                 </div>
                 <div className="footer_item nav_about">
                         <h2>About</h2>
-                        <Link to='/contacts' onClick={() => window.scrollTo(0,0)}>Support Center</Link>
-                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Customer Support</Link>
-                        <Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Get In Touch</Link>
-                        <Link to='/about'  onClick={() => window.scrollTo(0,0)}>App store</Link>
+                        <ul>
+                        <li><Link to='/contacts' onClick={() => window.scrollTo(0,0)}>Support Center</Link></li>
+                        <li><Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Customer Support</Link></li>
+                        <li><Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Get In Touch</Link></li>
+                        <li><Link to='/pre-order'  onClick={() => window.scrollTo(0,0)}>Pre-Order</Link></li>
+                        </ul>
                 </div>
                 
                 <div className="footer_item footer_contacts">

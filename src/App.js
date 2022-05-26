@@ -13,6 +13,7 @@ import Cart from "./components/cart";
 import {PreOrder, PreOrderCard} from "./components/preorder";
 import {GamePromo, PromoGameCard} from "./components/promoGames";
 import {Game} from "./components/game";
+import Spinner from "./components/spinner";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const GameContext = React.createContext();
@@ -21,6 +22,7 @@ export const PromoContext = React.createContext();
 export const PreContext = React.createContext()
 
 function App() {
+  const [isLoaded, setLoaded] = useState(false);
   const [dataFind, setDataFind] = useState([]);
   const [promoDataFind, setPromoDataFind] = useState([]);
   const [promoData, setPromoData] = useState([]);
@@ -123,7 +125,6 @@ getData();
     if(preDataFind.length === 0) {
       setPreDataFind(preData)
     }
-    console.log(preDataFind)
      })
   
   return (

@@ -83,8 +83,10 @@ function Contacts(){
                        <form action="">
                            {(nameDirty && nameError) && <div style={{color: 'red'}}>{nameError}</div>}
                            <input onChange={e => nameHandler(e)} onBlur={e => blurHandler(e)} value={name} type='text' name="name" placeholder='Name and Lastname'></input>
+
                            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
                            <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='Email Address'></input>
+                           
                            {(phoneDirty && phoneError) && <div style={{color: 'red'}}>{phoneError}</div>}
                            <input onChange={e => phoneHandler(e)} onBlur={e => blurHandler(e)} value={phone} type='tel' name="tel" placeholder='Phone number'></input>
                            <button type="submit">Submit</button>

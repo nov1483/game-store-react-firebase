@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import {Link, useParams} from "react-router-dom";
 import { PreContext } from '../App';
+import Spinner from "./spinner";
 import Modal from './modal';
 import "./preorder.css"
 
@@ -43,7 +44,7 @@ function PreOrderCard () {
     if(!isLoaded){
         
         return(
-            <p>Loading...</p>
+            <Spinner/>
         )
     }
 
@@ -60,7 +61,7 @@ function PreOrderCard () {
             </div>
             <div className="pre_game_card_info">
                 <img src={preOrderGame.data.img} alt='game' className="pre_order_card_img"></img>
-                <button onClick={() => setModalActive(true)}>Pre Order</button>
+                <button onClick={() => setModalActive(true)}>Pre-Order</button>
             </div>
             <Modal active={modalActive} setActive={setModalActive}/>
         </div>

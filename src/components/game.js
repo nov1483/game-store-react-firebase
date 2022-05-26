@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import { CartContext, GameContext } from "../App";
+import Spinner from "./spinner";
 import "./game.css"
 
 
@@ -18,7 +19,7 @@ function Game(props){
     if(!isLoaded){
         
         return(
-            <p>Loading...</p>
+            <Spinner/>
         )
     }
     return(

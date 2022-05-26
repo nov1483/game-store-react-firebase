@@ -1,11 +1,12 @@
-import React, {useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 import {Slider} from "./carousel-box";
 import SimpleSlider from "./playingSlider";
-import bringImg from "../img/bring_img.png"
-import playingBg from "../img/playing_img.jpg"
 import {GamePromo} from "./promoGames";
 import { PromoContext } from "../App";
+import Popup from "./popUp";
+import bringImg from "../img/bring_img.png"
+import playingBg from "../img/playing_img.jpg"
 import "./home.css"
 import "./promoGames.css"
 
@@ -14,12 +15,15 @@ import "./promoGames.css"
 
 
 function Home(props){
+    const [timedPopup, setTimedPopup] = useState(false);
     const {promoDataFind} = useContext(PromoContext);
     console.log(props)
+
     return(
         <div className="home-page">
             <h1>Pre-Order Games</h1>
             <Slider/>
+            <Popup/>
             <div className="full adding">
                 <div className="container adding-container">
                     <div className="adding-info">

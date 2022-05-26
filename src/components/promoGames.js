@@ -1,9 +1,9 @@
 import React, {useEffect, useState, useContext} from "react";
 import {Link, useParams} from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import db from "../db/db";
-import "./promoGames.css"
 import { CartContext, PromoContext } from "../App";
+import Spinner from "./spinner";
+import "./promoGames.css"
+
 
 function GamePromo(props){
     const { title, genres, price, oldPrice, img, id, add } = props;
@@ -42,12 +42,11 @@ function GamePromo(props){
 
     if(!isLoaded){
         return(
-            <p>Loading...</p>
+           <Spinner/>
         );
     };
 
     return(
-        <>
       <div className=" full game-card">
             <h1 key={id}>{promoGame.data.title}</h1>
             <div className="container game_card_container">
@@ -69,7 +68,6 @@ function GamePromo(props){
                 </div>
             </div>
         </div>
-        </>
     );
     
 };
