@@ -52,7 +52,7 @@ function GamePromo(props){
             <div className="container game_card_container">
                 
                 <div className="game-trailer">
-                    <iframe width="600" height="400" src={promoGame.data.trailer} frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="600" height="400" src={promoGame.data.trailer} frameBorder="0" allowFullScreen title="trailer"></iframe>
                     <p>{promoGame.data.text}</p>
                     <p>Genres: <span>{promoGame.data.genres}</span></p>
                     <p>Price: <span className="old_price">{promoGame.data.oldPrice}</span> <span className="promo_price"> Promo Price : {promoGame.data.price}</span></p>
@@ -63,7 +63,7 @@ function GamePromo(props){
                     
                     <button onClick={() => props.add(promoGame.id)}
                             className={cart.includes(promoGame.id) ? 'button disabled_button': 'button button_game_card'}>   
-                                {cart.includes(promoGame.id) ? 'Added' : 'Add To Cart'}
+                            {cart.includes(promoGame.id) ? 'Added' : 'Add To Cart'}
                     </button>
                 </div>
             </div>

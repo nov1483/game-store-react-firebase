@@ -12,7 +12,7 @@
 }
 
 .popup_inner {
-    background-color: rgb(41, 32, 32);
+    background-color: rgb(0, 0, 0);
     color: rgb(27, 21, 21);
     border-radius: 15px;
     transition: ease-in-out 0.5s;
@@ -41,6 +41,11 @@
     justify-content: center;
 }
 
+.popup_info form {
+    display: flex;
+    flex-direction: column;
+}
+
 .popup_info input {
     border-radius: 5px;
     border: 0;
@@ -50,7 +55,7 @@
 }
 
 .popup_info button {
-    padding: 2px 20px;
+    padding: 3px 15px;
     border-radius: 5px;
     border: 0;
     background-color: rgb(141, 67, 175);

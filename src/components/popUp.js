@@ -36,10 +36,11 @@ function Popup(props) {
                     <div className='popup_info'>
                         <h3>Want a Free Random Game?</h3>
                         <p>Left your E-mail address and you got it!</p>
-
-                        {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                        <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='example@gmail.com'/>
-                        <button type='submit'>Got It!</button>
+                        <form action="">
+                            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
+                            <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='example@gmail.com'/>
+                            <button>Got It!</button>
+                        </form>
                     </div>
                     <div className="popup_button_close">
                         <button className="close-btn" onClick={() => props.setTrigger(false)}>X</button>

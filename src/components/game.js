@@ -28,7 +28,7 @@ function Game(props){
             <div className="container game_card_container">
                 
                 <div className="game-trailer">
-                    <iframe width="600" height="400" src={game.data.trailer} frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="600" height="400" src={game.data.trailer} frameBorder="0" allowFullScreen title="trailer"></iframe>
                     <p>{game.data.text}</p>
                     <p>Genres: <span>{game.data.genres}</span></p>
                     <p>Price: <span>{game.data.price}</span></p>

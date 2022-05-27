@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Outlet} from "react-router-dom"
+import {Link} from "react-router-dom"
 import logo from "../img/logo_1.png"
 import "./footer.css"
 
@@ -17,7 +17,7 @@ function Footer(){
                             <li><Link to='/game-store'  onClick={() => window.scrollTo(0,0)}>Game Store</Link></li>
                             <li><Link to='/about'  onClick={() => window.scrollTo(0,0)}>About</Link></li>
                             <li><Link to='/contacts'  onClick={() => window.scrollTo(0,0)}>Contacts</Link></li>
-                            <li><Link to='/'  onClick={() => window.scrollTo(2500,2500)}>Sale</Link></li>
+                            <li><Link to='/'  onClick={() => window.scrollTo(2600,2600)}>Sale</Link></li>
                         </ul>
                 </div>
                 <div className="footer_item nav_about">

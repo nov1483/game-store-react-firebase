@@ -4,18 +4,17 @@ import {Link} from "react-router-dom";
 import Modal from './modal';
 import { PreContext } from '../App';
 import Popup from './popUp';
-import moreGames from '../img/moreGames.jpg'
 import "./carousel.css"
 
  function Slider(){
     const [timedPopup, setTimedPopup] = useState(false);
     const {preDataFind} = useContext(PreContext);
     const [modalActive, setModalActive] = useState(false);
-
+  
     useEffect(() => {
       setTimeout(() => {
         setTimedPopup(true)
-      }, 3000)
+      }, 3000);
     },[])
 
     return(
@@ -42,19 +41,7 @@ import "./carousel.css"
         </Carousel>
         <Modal active={modalActive} setActive={setModalActive}/>
         </div> 
-        <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
-            {/* <div className='popup_inner'>
-              <div className='popup_img'>
-                  <img src={moreGames} alt='GAMES'></img>
-              </div>
-              <div className='popup_info'>
-                <h3>Want a Free Random Game?</h3>
-                <p>Left your E-mail address and you got it!</p>
-                <input type='email' placeholder='example@gmail.com'/>
-                <button type='submit'>Got It!</button>
-              </div>
-            </div> */}
-        </Popup>
+        <Popup trigger={timedPopup} setTrigger={setTimedPopup}/>
       </div>
     )
 }
