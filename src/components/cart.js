@@ -6,8 +6,6 @@ import "./cart.css"
 
 function CartWidget(){
     const {cart} = useContext(CartContext);
-    
-
     return (
         <div className="cart_widget">
             <Link to='cart' className="cart"><BsCart4/></Link>

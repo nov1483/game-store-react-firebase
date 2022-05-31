@@ -15,7 +15,6 @@ function Nav(){
         <React.Fragment>
             <header className="full header">
                 <div className="container header_container">
-                    <div className="menu">
                         <div className="nav_container">
                                 <div className="burger">
                                     <input type="checkbox" checked={check} onChange={() => setCheck(!check)} className="burger__check" id="burger-check" />
@@ -34,9 +33,12 @@ function Nav(){
                                     </nav>
                                 
                                 </div> 
-                                <Link to='/'><img src={logo} alt="logo" className="logo_header"></img></Link> 
-                                <div className="nav_header">
-                            
+                               
+                               
+                                
+                        </div> 
+                        <Link to='/'><img src={logo} alt="logo" className="logo_header"></img></Link> 
+                        <div className="nav_header">
                                     <nav className="nav">
                                         <ul>
                                             <li><Link to='/'>Main</Link></li>
@@ -48,18 +50,14 @@ function Nav(){
                                             </li>
                                             <li><Link to='about'>About</Link></li>
                                             <li><Link to='Contacts'>Contacts</Link></li>
-                                        </ul>
-                                        
+                                        </ul>  
                                     </nav>
                                 </div>
-                        
-                       
                                 <CartWidget/>
-                        </div>
                         <div className="header_form">
                             <DataSearch/>
                         </div>
-                    </div>
+                    
                     
                 </div>
             </header>

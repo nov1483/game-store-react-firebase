@@ -30,7 +30,6 @@ function App() {
   const [preDataFind, setPreDataFind] = useState([])
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
-  // console.log(data)
 
   async function getData(){
     if (data.length === 0) {
@@ -68,14 +67,13 @@ function App() {
     };
     localStorage.setItem('games-promo', JSON.stringify(dataPromo));
   };
-  // console.log(promoData)
+ 
   getPromoData();
 
   async function getSliderData(){
     const docSlider = await getDocs(collection(db, "games-pre"))
     let dataSlider = [];
     docSlider.forEach(d => {
-      // console.log(d.id, d.data())
       dataSlider.push({
         id : d.id,
         data : d.data(),
@@ -84,7 +82,6 @@ function App() {
     if(data.length === 0){
       setPreData(dataSlider);
     };
-    // console.log(dataPre);
 };
 getSliderData();
 getData();
@@ -98,7 +95,6 @@ getData();
   }
 
 
-  getCart()
   getData();
 
 
@@ -112,9 +108,11 @@ getData();
 
 
   useEffect(() => {
+    setLoaded(true)
     
     if(cart){
      localStorage.setItem('cart', JSON.stringify(cart));
+     getCart()
     }
     if(dataFind.length === 0){
         setDataFind(data); 
@@ -126,6 +124,12 @@ getData();
       setPreDataFind(preData)
     }
      })
+
+     if(!isLoaded) {
+       return(
+         <Spinner/>
+       )
+     }
   
   return (
     <PreContext.Provider value={{preDataFind, setPreDataFind}}>
@@ -151,9 +155,6 @@ getData();
         </CartContext.Provider>
       </PromoContext.Provider>
     </PreContext.Provider>
-    
-    
-
 );
 }
 

@@ -2,6 +2,7 @@
 .header_container{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 0px 0px 15px 15px;
     margin-bottom: 50px;
     box-shadow: 0px 9px 20px -1px rgba(36, 33, 39, 0.7);
@@ -11,24 +12,19 @@ header img {
     padding: 10px;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .nav_container {
     display: flex;
     align-items: center;
 }
-.menu .nav {
+ .nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-right: 30px;
 }
 
-.menu ul {
+ .nav_header ul {
     display: flex;
     list-style: none;
     margin-bottom: 0;
@@ -70,6 +66,7 @@ header img {
 	background-color: rgb(223, 215, 215);
 	transition: all 1s ease;
 }
+
 .nav_header a:hover::after,
 .nav ul .drop_menu .submenu a:hover::after{
     width: 100%;
@@ -109,6 +106,7 @@ header img {
     backdrop-filter: blur(2px);
     
 }
+
 .nav ul .drop_menu:hover .submenu li {
     display: block;
 }
@@ -147,17 +145,12 @@ header img {
 
 
 
-.menu .cart {
+.cart {
     font-size: 22px;
     color: #fff;
 }
-.menu .cart:hover {
+.cart:hover {
     color: rgb(134, 96, 240);
-}
-
-.header_form {
-    text-align: center;
-    width: 100%;
 }
 
 header input {
