@@ -73,6 +73,17 @@
     color: rgb(134, 96, 240);
 }
 
+form .error_contacts p {
+    color: rgb(211, 44, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .error_contacts svg {
+    margin-right: 10px;
+}
+
 .contacts_info {
     display: flex;
     padding: 70px;

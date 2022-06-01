@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import aboutImage from "../img/about_img.png";
 import {ImNewspaper} from "react-icons/im";
 import {BiConversation} from "react-icons/bi";
@@ -8,31 +9,26 @@ import {ImFacebook2} from "react-icons/im"
 import {BsInstagram} from "react-icons/bs"
 import {FaTwitterSquare} from "react-icons/fa"
 import {BsTwitch} from "react-icons/bs"
+import {BiErrorAlt} from "react-icons/bi";
 import logo from "../img/logo.png"
 import "./about.css"
 function About(){
 
-    const [email, setEmail] = useState('');
-    const [emailDirty, setEmailDirty] = useState(false);
-    const [emailError, setEmailError] = useState('E-mail cannot be empty');
+    const {
+        register,
+        formState : {
+            errors,
+        },
+        handleSubmit,
+        reset,
+    } = useForm({
+        mode : "all"
+    });
 
-    const emailHandler = (e) => {
-        setEmail(e.target.value)
-        const emailRe = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-        if(!emailRe.test(String(e.target.value).toLowerCase())){
-            setEmailError('Uncorrect E-mail')
-        }else {
-            setEmailError('')
-        }
-    }
-
-    const blurHandler = (e) => {
-        switch (e.target.name) {
-    
-            case 'email' :
-                setEmailDirty(true);
-                break   
-        }
+    const onSubmit = (data) => {
+        reset();
+        alert(`Thank you, Your e-mail is : ${data.email}`)
+      
     }
 
 
@@ -116,9 +112,13 @@ function About(){
                 </div>
                 <div className="full about_form">
                         <h2>NEVER MISS OUT ON A <img src={logo} alt='logo'></img> RELEASE AGAIN</h2>
-                        <form action="">
-                            {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                            <input  onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='Email Address'></input>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="error_contacts">{errors?.email && <p><BiErrorAlt/>{errors?.email?.message || "Uncorrect E-mail!"}</p>}</div>
+                            <input  
+                            {...register('email', 
+                            {required : "Cannot be empty!", 
+                            pattern : /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/})} 
+                            type='email' name="email" placeholder='Email Address'></input>
                             <button>Submit</button>
                         </form>
                 </div>

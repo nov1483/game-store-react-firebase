@@ -1,66 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
+import { useForm } from "react-hook-form"
 import {ImFacebook2} from "react-icons/im"
 import {BsInstagram} from "react-icons/bs"
 import {FaTwitterSquare} from "react-icons/fa"
 import {BsTwitch} from "react-icons/bs"
 import {AiOutlineHeart} from "react-icons/ai"
+import {BiErrorAlt} from "react-icons/bi"
 import "./contact.css"
 
 function Contacts(){
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const {
+        register,
+        formState : {
+            errors,
+        },
+        handleSubmit,
+        reset,
+    } = useForm({
+        mode : "all"
+    });
 
-    const [nameDirty, setNameDirty] = useState(false);
-    const [emailDirty, setEmailDirty] = useState(false);
-    const [phoneDirty, setPhoneDirty] = useState(false);
-
-    const [nameError, setNameError] = useState('Name cannot be empty');
-    const [emailError, setEmailError] = useState('E-mail cannot be empty');
-    const [phoneError, setPhoneError] = useState('Phone number cannot be empty');
-
-    const nameHandler = (e) => {
-        setName(e.target.value)
-        const nameRe = /^[a-zA-Z ]+$/;
-        if(!nameRe.test(String(e.target.value).toLowerCase())){
-            setNameError('Uncorrect Name')
-        }else {
-            setNameError('')
-        }
-    }
-
-    const emailHandler = (e) => {
-        setEmail(e.target.value)
-        const emailRe = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-        if(!emailRe.test(String(e.target.value).toLowerCase())){
-            setEmailError('Uncorrect E-mail')
-        }else {
-            setEmailError('')
-        }
-    }
-
-    const phoneHandler = (e) => {
-        setPhone(e.target.value)
-        const phoneRe = /^[\+]?([0-9][\s]?|[0-9]?)([(][0-9]{3}[)][\s]?|[0-9]{3}[-\s\.]?)[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-        if(!phoneRe.test(String(e.target.value).toLowerCase())){
-            setPhoneError('Uncorrect Phone Number')
-        }else {
-            setPhoneError('')
-        }
-    }
-
-    const blurHandler = (e) => {
-        switch (e.target.name) {
-            case 'name' :
-                setNameDirty(true);
-                break
-            case 'email' :
-                setEmailDirty(true);
-                break
-            case 'tel' :
-                setPhoneDirty(true);
-                break    
-        }
+    const onSubmit = (data) => {
+        reset();
+        alert(`Thank You. We'd call You back  ${data.name}!`)
+      
     }
 
     return(
@@ -80,15 +43,27 @@ function Contacts(){
                         </p>
                    </div>
                    <div className="get_in_touch_contact">
-                       <form action="">
-                           {(nameDirty && nameError) && <div style={{color: 'red'}}>{nameError}</div>}
-                           <input onChange={e => nameHandler(e)} onBlur={e => blurHandler(e)} value={name} type='text' name="name" placeholder='Name and Lastname'></input>
+                       <form onSubmit={handleSubmit(onSubmit)} action="">
 
-                           {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                           <input onChange={e => emailHandler(e)} onBlur={e => blurHandler(e)} value={email} type='email' name="email" placeholder='Email Address'></input>
+                           <div className="error_contacts">{errors?.name && <p><BiErrorAlt/>{errors?.name?.message || "Error!"}</p>}</div>
+                           <input 
+                           {...register('name', 
+                           {required : "Required Field!", minLength : {value : 5, message : "Min 5 symbols!"}})}  
+                           type='text' name="name" placeholder='Name and Lastname'></input>
                            
-                           {(phoneDirty && phoneError) && <div style={{color: 'red'}}>{phoneError}</div>}
-                           <input onChange={e => phoneHandler(e)} onBlur={e => blurHandler(e)} value={phone} type='tel' name="tel" placeholder='Phone number'></input>
+                           <div className="error_contacts">{errors?.email && <p><BiErrorAlt/>{errors?.email?.message || "Uncorrect E-mail!"}</p>}</div>
+                           <input 
+                           {...register('email', 
+                           {required : "Required Field!", 
+                           pattern : /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/})} 
+                           type='email' name="email" placeholder='Email Address'></input>
+                           
+                           <div className="error_contacts">{errors?.tel && <p><BiErrorAlt/>{errors?.tel?.message || "Uncorrect Phone Number!"}</p>}</div>
+                           <input 
+                           {...register('tel', 
+                           {required : "Required Field!", 
+                           pattern : /^[\+]?([0-9][\s]?|[0-9]?)([(][0-9]{3}[)][\s]?|[0-9]{3}[-\s\.]?)[0-9]{3}[-\s\.]?[0-9]{4,6}$/im})} 
+                           type='tel' name="tel" placeholder='Phone number'></input>
                            <button type="submit">Submit</button>
                        </form>
                    </div>
